@@ -1,0 +1,15 @@
+<div *ngIf="pruebaFinalizada == false">
+    <div class = "class-contador">{{contadorPregunta}}/{{cantidadPregunta}}</div>
+    <div class = "class-pregunta">{{pregunta}}</div>
+    <div class="class-opciones">
+    <br><button class ="class-opciones-botones" (click) = "siguientePregunta(0)">{{opciones[0]}}</button>
+    <br><button class ="class-opciones-botones" (click) = "siguientePregunta(1)">{{opciones[1]}}</button>
+    <br><button class ="class-opciones-botones" (click) = "siguientePregunta(2)">{{opciones[2]}}</button>
+    <br><button class ="class-opciones-botones" (click) = "siguientePregunta(3)">{{opciones[3]}}</button>
+    <br><button class ="class-opciones-botones" (click) = "siguientePregunta(4)">{{opciones[4]}}</button>
+    </div>
+    </div>
+    
+    <div *ngIf="pruebaFinalizada == true" class="class-pantalla-finalizar">
+        TERMINASTE LA PRUEBA y obtuviste {{resultado}} buenas
+    </div>

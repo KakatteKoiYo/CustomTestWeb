@@ -1,0 +1,24 @@
+.class-test-main{
+    text-align: center;
+
+}
+.class-test-main-button{
+    color: white;
+    background: black;
+    border-width: 4px;
+    border-color: white;
+    font-size: 3em;
+    margin-top: 3em;
+}
+.class-radio-cantidadP{
+    display: inline;
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+input[type=radio] {
+    display: inline;
+    border: 0px;
+    width: 1.5em;
+    height: 1.5em;
+}

@@ -1,0 +1,26 @@
+<div *ngIf="iniciar == false" class="class-test-main">
+    <div>
+        <div>Lista seleccionada: {{listaSeleccionada}}</div>
+        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona la cantidad de preguntas:</legend></div>
+        <div class="class-radio-cantidadP">
+            <input id="valor1" type="radio" value="10" name="radioCantidad" #valor1 checked (change)="onChange(valor1.value)">
+            <label for="valor1">10</label>
+        </div>
+
+        <div class="class-radio-cantidadP">
+            <input id="valor2" type="radio" value="20" name="radioCantidad" #valor2 (change)="onChange(valor2.value)">
+            <label for="valor2">20</label>
+        </div>
+
+        <div class="class-radio-cantidadP">
+            <input id="valor3" type="radio" value="30" name="radioCantidad" #valor3 (change)="onChange(valor3.value)">
+            <label for="valor3">30</label>
+        </div>
+    </div>
+
+    <button routerLink="start" [queryParams]="{cantidadPregunta: radioValor}" class="class-test-main-button" (click)="swapIniciar()">
+        INICIAR PRUEBA
+    </button>
+</div>
+
+<router-outlet ></router-outlet>

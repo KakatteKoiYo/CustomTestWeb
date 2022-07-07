@@ -1,0 +1,4 @@
+<div>Ej: <span>Casa</span><span>Home</span></div>
+<input id="palabra1" [(ngModel)]="palabra1" #renPalabra1  placeholder="Palabra1..."  (keyup.enter)="cambiarFoco()"  (keyup)="validarTexto()"><input id="palabra2" [(ngModel)]="palabra2" #renPalabra2 placeholder="Palabra2..." [disabled]="isDisabled"  (keypress)="resetBandera()" (keyup.backspace)="regresarFoco()" (keyup.enter)="agregar()">
+<div *ngFor="let i of arrayPalabras; index as j">{{i.palabra1}} = {{i.palabra2}} <span (click)="eliminar(j)">X</span>  </div>
+<div><input id="nombre" [(ngModel)]="nombreLista" #nombre  placeholder="Elige un nombre..."  ><button (click)="crear(nombre.value)">Crear lista</button></div>

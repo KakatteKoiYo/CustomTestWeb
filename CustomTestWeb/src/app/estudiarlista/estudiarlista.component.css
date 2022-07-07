@@ -1,0 +1,101 @@
+
+.class-button-editeliminar{
+    background: black;
+    color: white;
+    font-size: 1em;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+}
+
+.class-button-editeliminar:hover{
+
+    border-color: rgb(139, 255, 245);
+}
+
+.class-icon{
+    transform: scale(1.3);
+}
+
+.class-lista-objetos{
+    border-style:dashed;
+    border-color: rgb(255 255 255 / 69%);
+    border-width: 1px;
+
+}
+.displayInline{
+
+    display:inline-block;
+    margin: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    min-width: 30%;
+    max-width: 30%;
+    overflow:hidden;
+    
+}
+
+.class-search-input{
+    position: absolute;
+    right: 0;
+    font-size: 1.3em;
+
+}
+.class-noresult{
+    text-align: center;
+    font-size: 3em;
+}
+.class-main{
+ width: 60%;
+ max-height: 90%;
+ overflow:auto;
+ display: inline-block;
+
+}
+
+.class-detalles{
+    display:inline; 
+    width: 30%;
+    padding: 5%;
+    position: absolute;
+    text-align: center;
+    font-size: 2em;
+}
+
+.pantalla-detalles{
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.borderWidth{
+    border-width: 1px;
+}
+
+.descripcionPadding{
+    padding-top: 40px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+
+  }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(105, 73, 139);
+
+  }
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(76, 54, 102);
+  }

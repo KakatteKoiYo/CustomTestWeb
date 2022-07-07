@@ -1,0 +1,31 @@
+.class-contador{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 2em;
+
+}
+.class-pregunta{
+    text-align: center;
+    font-size: 3.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.class-opciones{
+    text-align: center;
+}
+.class-opciones-botones{
+    background: black;
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 0.8em;
+    color: white;
+    min-width: 20em;
+    
+}
+
+.class-pantalla-finalizar{
+    color: white;
+}
