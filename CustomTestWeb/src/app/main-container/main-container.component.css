@@ -8,11 +8,11 @@
     border-width: 4px;
     border-color: white;
     font-size: 3em;
-    margin-top: 3em;
+    margin-top: 1em;
 }
-.class-radio-cantidadP{
+.class-radio{
     display: inline;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-left: 10px;
 }
 
@@ -21,4 +21,7 @@ input[type=radio] {
     border: 0px;
     width: 1.5em;
     height: 1.5em;
+}
+.class-listaSel{
+    font-size: 3em;
 }

@@ -13,8 +13,13 @@ export class StartTestComponent implements OnInit {
   pruebaFinalizada = false;
   contadorPregunta : number = 1;
   cantidadPregunta : number = 10;
+  preguntaTipo : number = 0;
+  preguntaTipoTemp? : number;
+  respuestaTipo : number = 0;
   lugarRespuesta? : number;
   pregunta? : string;
+  respuesta? : string;
+  inputRespuesta : string = "";
   resultado : number = 0;
   opciones : string[] = [];
  
@@ -26,19 +31,34 @@ export class StartTestComponent implements OnInit {
     this.lugarRespuesta = Math.floor(Math.random() * 5);
     let listaNumerosUsados : number[] = [numeroPregunta];
 
-    console.log(this.lugarRespuesta)
+    if(this.preguntaTipo == 0){
+      this.preguntaTipoTemp = Math.floor(Math.random() * 2);
+      this.pregunta = this.preguntaTipoTemp == 0 ? this.lista[numeroPregunta].palabra1 : this.lista[numeroPregunta].palabra2;
+      this.respuesta = this.preguntaTipoTemp == 0 ? this.lista[numeroPregunta].palabra2 : this.lista[numeroPregunta].palabra1;
+    }  
 
-    this.pregunta = this.lista[numeroPregunta].palabra1
+    if(this.preguntaTipo == 1){
+      this.pregunta = this.lista[numeroPregunta].palabra1
+      this.respuesta = this.lista[numeroPregunta].palabra2
+      this.preguntaTipoTemp = 0;
+    }
+    if(this.preguntaTipo == 2){
+      this.pregunta = this.lista[numeroPregunta].palabra2
+      this.respuesta = this.lista[numeroPregunta].palabra1
+      this.preguntaTipoTemp = 1;
+    }
+    
+    
     for (let i = 0; i < 5; i++) {
       if(i == this.lugarRespuesta){
-        this.opciones[i] = this.lista[numeroPregunta].palabra2;
+        this.opciones[i] = this.preguntaTipoTemp == 0 ? this.lista[numeroPregunta].palabra2 : this.lista[numeroPregunta].palabra1
       }
       else{
         while(1){
           let numeroRespuesta = Math.floor(Math.random() * this.lista.length);
   
           if (!(listaNumerosUsados.includes(numeroRespuesta))){
-            this.opciones[i] = this.lista[numeroRespuesta].palabra2;
+            this.opciones[i] = this.preguntaTipoTemp == 0 ? this.lista[numeroRespuesta].palabra2 : this.lista[numeroRespuesta].palabra1
             listaNumerosUsados.push(numeroRespuesta);
             break;
           }
@@ -67,14 +87,42 @@ export class StartTestComponent implements OnInit {
     }
   }
 
+  siguientePreguntaE(valor : string){
+    this.inputRespuesta = "";
+    console.log("Pregunta: " + this.pregunta)
+    console.log("Respuesta: " + this.respuesta)
+    console.log("Valor: " + valor)
+    if(valor == this.respuesta){
+      console.log("Correcto!")
+      this.resultado += 1
+    }else{
+      console.log("Incorrecto!")
+    }
+    if(this.contadorPregunta == this.cantidadPregunta){
+      this.pruebaFinalizada = true;
+    }
+    else{
+      this.contadorPregunta += 1
+      this.preguntaRespuestasGen()
+    }
+  }
+
   ngOnInit(): void {
     this.activate.queryParams
       .subscribe(params => {
         console.log(params); // { orderby: "price" }
         if(params['cantidadPregunta'] != undefined){
-          this.cantidadPregunta = 10;
+          this.cantidadPregunta = params['cantidadPregunta'];
         }
-        // console.log(this.orderby); // price
+        if(params['preguntaTipo'] != undefined){
+          this.preguntaTipo = params['preguntaTipo']
+        }
+        if(params['respuestaTipo'] != undefined){
+          this.respuestaTipo = params['respuestaTipo']
+        }
+      
+        
+        
       });
     this.lista = this.datos.listaPalabras!;
     this.preguntaRespuestasGen()
