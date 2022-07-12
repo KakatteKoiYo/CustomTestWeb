@@ -1,0 +1,17 @@
+<mat-toolbar class="header">
+  
+  <button (click)="drawer.toggle()" class = "boton-menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+    <h1>CustomTestWebsite</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container"  >
+  <mat-sidenav #drawer mode="side" opened class = "sidenav-class">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content class = "sidenav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

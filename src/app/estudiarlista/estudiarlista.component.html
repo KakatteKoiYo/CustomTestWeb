@@ -1,0 +1,40 @@
+<div style="padding-bottom:4em;"><input class= "class-search-input" id="searchFromList" #search [(ngModel)]="searchString" (keyup)="onChange(search.value)" placeholder="Buscar..."></div>
+<div *ngIf="noResult" class="class-noresult">No se encontraron coincidencias...</div>
+
+<div class="class-main">
+    <div>
+        <div *ngFor="let i of listaPalabrasFiltro"  class="displayInline" (click)="mostrarDetalles(i.palabra1, i.palabra2)">
+
+            <div class="class-lista-objetos">{{i.palabra1}}</div>
+            <div class="class-lista-objetos">{{i.palabra2}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="class-detalles" *ngIf="palabra1Det && !noResult">
+    
+    <div class="pantalla-detalles">
+        {{palabra1Det}}
+    </div>
+
+    <div class="pantalla-detalles">
+        {{palabra2Det}}
+    </div>
+        
+    <div class="pantalla-detalles">
+        [nivel]
+    </div>
+
+
+    <div class="pantalla-detalles borderWidth">
+        Descripción:
+        <div>
+            ---
+        </div>    
+        
+    </div>
+    <div class="class-editar-eliminar">
+        <button class="class-button-editeliminar"><mat-icon class="class-icon">edit</mat-icon>Editar</button>
+        <button class="class-button-editeliminar"><mat-icon class="class-icon" (click)="eliminar()">delete</mat-icon>Eliminar</button>
+    </div>
+</div>

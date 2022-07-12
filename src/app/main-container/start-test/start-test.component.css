@@ -1,0 +1,68 @@
+.class-contador{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 2em;
+
+}
+
+.class-salir-button{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 2em;
+    background: black;
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+
+}
+
+.class-resultado-real{
+    position: absolute;
+    margin-top: 100px;
+}
+
+.class-resultado-rg{
+    margin-top: 10px;
+    font-size: 1.3em;
+    display: block;
+    min-width: 40px;
+
+    
+}
+
+.red{
+    background: red;
+}
+
+.green{
+    background: green;
+}
+
+.class-pregunta{
+    text-align: center;
+    font-size: 3.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.class-opciones{
+    text-align: center;
+}
+.class-opciones-botones{
+    background: black;
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 0.8em;
+    color: white;
+    min-width: 20em;
+    
+}
+
+.class-pantalla-finalizar{
+    color: white;
+}

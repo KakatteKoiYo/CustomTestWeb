@@ -1,0 +1,27 @@
+
+.class-nav{
+    text-align: left;
+}
+.class-nav-list{
+    color: white;
+    font-size: 1.3em;
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+
+}
+.selected{
+    background-color: rgb(0, 63, 156);
+}
+
+select{
+    background:white;
+    text-align: center;
+    width: 100%;
+    color: black;
+    border: 3px;
+    font-size: 1.2em;
+
+}

@@ -1,0 +1,42 @@
+
+
+.example-container {
+
+  height: 88vh;
+
+  background: #eee;
+}
+
+.header{
+  height: 10vh;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+
+  background: #0c7c77;
+  color: white;
+  font-size: 1.4em;
+}
+
+.sidenav-class {
+  background: rgb(4, 47, 87);
+  color: white;
+  width: 12%;
+  
+    
+}
+.sidenav-content{
+  background: black;
+  color: white;
+  
+}
+
+.boton-menu{
+  background: #0a5350;
+  position: relative;
+  color: white;
+  font-size: 1.1em;
+  bottom: 0%;
+  left: 0;
+  margin-right: 30vw;
+}

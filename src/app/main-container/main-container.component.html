@@ -1,0 +1,56 @@
+<div *ngIf="iniciar == false" class="class-test-main">
+    <div>
+        <div class="class-listaSel">{{listaSeleccionada}}</div>
+        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona la cantidad de preguntas:</legend></div>
+        <div class="class-radio">
+            <input id="valor1" type="radio" value="10" name="radioCantidad" #valor1 checked (change)="setCantidad(valor1.value)">
+            <label for="valor1">10</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor2" type="radio" value="20" name="radioCantidad" #valor2 (change)="setCantidad(valor2.value)">
+            <label for="valor2">20</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor3" type="radio" value="30" name="radioCantidad" #valor3 (change)="setCantidad(valor3.value)">
+            <label for="valor3">30</label>
+        </div>
+
+        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona cuál será la pregunta:</legend></div>
+        <div class="class-radio">
+            <input id="valor4" type="radio" value="0" name="radioPregunta" #valor4 checked (change)="setPregunta(valor4.value)">
+            <label for="valor4">Ambas</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor5" type="radio" value="1" name="radioPregunta" #valor5 (change)="setPregunta(valor5.value)">
+            <label for="valor5">Palabra1</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor6" type="radio" value="2" name="radioPregunta" #valor6 (change)="setPregunta(valor6.value)">
+            <label for="valor6">Palabra2</label>
+        </div>
+
+        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona el tipo de respuesta:</legend></div>
+        <div class="class-radio">
+            <input id="valor7" type="radio" value="0" name="radioRespuesta" #valor7 checked (change)="setRespuesta(valor7.value)">
+            <label for="valor7">Opciones</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor8" type="radio" value="1" name="radioRespuesta" #valor8 (change)="setRespuesta(valor8.value)">
+            <label for="valor8">Escrita</label>
+        </div>
+
+
+    </div>
+    
+
+    <button routerLink="start" [queryParams]="{cantidadPregunta: radioValor, preguntaTipo: radioValor2, respuestaTipo: radioValor3}" class="class-test-main-button" (click)="swapIniciar()">
+        INICIAR PRUEBA
+    </button>
+</div>
+
+<router-outlet ></router-outlet>
