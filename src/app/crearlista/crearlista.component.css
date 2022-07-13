@@ -15,5 +15,9 @@ td{
 }
 .class-eliminar{
     cursor: pointer;
-    
+
+}
+.class-input-palabras{
+    margin: 3em;
+    font-size: 1.5em;
 }
