@@ -1,0 +1,19 @@
+th{
+    background: #0c7c77;
+    border: 1px solid;
+    border-color: white;
+    min-width: 10em;
+    text-align: center;
+}
+
+td{
+    background: rgb(80, 85, 94);
+    border: 1px solid;
+    border-color: white;
+    min-width: 10em;
+    text-align: center;
+}
+.class-eliminar{
+    cursor: pointer;
+    
+}
