@@ -1,4 +1,20 @@
 <div>Ej: <span>Casa</span><span>Home</span></div>
 <input id="palabra1" [(ngModel)]="palabra1" #renPalabra1  placeholder="Palabra1..."  (keyup.enter)="cambiarFoco()"  (keyup)="validarTexto()"><input id="palabra2" [(ngModel)]="palabra2" #renPalabra2 placeholder="Palabra2..." [disabled]="isDisabled"  (keypress)="resetBandera()" (keyup.backspace)="regresarFoco()" (keyup.enter)="agregar()">
-<div *ngFor="let i of arrayPalabras; index as j">{{i.palabra1}} = {{i.palabra2}} <span (click)="eliminar(j)">X</span>  </div>
+<div >
+    <table *ngIf="arrayPalabras">
+        <tr>
+          <th>Palabra1</th>
+          <th>Igual a</th>
+          <th>Palabra2</th>
+          <th>Eliminar</th>
+        <tr *ngFor="let i of arrayPalabras; index as j">
+          <td>{{i.palabra1}}</td>
+          <td>=</td>
+          <td>{{i.palabra2}}</td>
+          <td> <span (click)="eliminar(j)">X</span>  </td>
+        </tr>
+
+      </table>
+
+</div>
 <div><input id="nombre" [(ngModel)]="nombreLista" #nombre  placeholder="Elige un nombre..."  ><button (click)="crear(nombre.value)">Crear lista</button></div>
