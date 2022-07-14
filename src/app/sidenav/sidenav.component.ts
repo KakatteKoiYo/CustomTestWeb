@@ -38,7 +38,6 @@ export class SidenavComponent implements OnInit {
 
   }
 
- 
 
   ngOnInit(): void {
     this.listasDisponibles = this.datos.obtenerListaNombre();

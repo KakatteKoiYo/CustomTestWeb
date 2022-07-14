@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DatosService } from '../datos.service';
+
+
 @Component({
   selector: 'app-main-container',
   templateUrl: './main-container.component.html',
@@ -20,6 +22,7 @@ export class MainContainerComponent implements OnInit {
   form = new FormGroup({
     cantidadPreguntas: new FormControl('')
   });
+
 
   swapIniciar(){
     if(this.iniciar== false){

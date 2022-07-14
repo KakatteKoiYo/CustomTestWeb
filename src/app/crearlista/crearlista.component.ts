@@ -75,7 +75,8 @@ export class CrearlistaComponent implements OnInit {
 
   eliminar(index: number){
     console.log(index)
-    this.arrayPalabras.splice(index, 1);
+    this.arrayPalabras.reverse().splice(index, 1);
+    this.arrayPalabras.reverse()
   }
 
   crear(nombre : string){
