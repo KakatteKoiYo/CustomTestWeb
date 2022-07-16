@@ -1,5 +1,5 @@
 <div *ngIf="pruebaFinalizada == false">
-    <div ><a [routerLink]="'/test'"><button class="class-salir-button">SALIR</button></a></div>
+    <div ><a [routerLink]="'/test'"><button class="class-salir-button"  (click)="openSideNav()">SALIR</button></a></div>
     <div class = "class-contador">{{contadorPregunta}}/{{cantidadPregunta}}</div>
     <div class="class-resultado-real">
         <span  *ngFor="let i of arrayResultado" [ngClass]="i == 1 ? 'class-resultado-rg green': 'class-resultado-rg red' ">&nbsp;</span></div>

@@ -46,6 +46,8 @@ export class MainContainerComponent implements OnInit {
     
     this.radioValor3 = Number(valor);
   }
+
+
   ngOnInit(): void {
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       if(this.router.url != "/test"){

@@ -27,6 +27,10 @@ export class StartTestComponent implements OnInit {
 
   constructor(private activate : ActivatedRoute, private datos: DatosService) { }
 
+  openSideNav(){
+    this.datos.openSideNav();
+  }
+
   preguntaRespuestasGen(){
     let numeroPregunta = Math.floor(Math.random() * this.lista.length);
     this.lugarRespuesta = Math.floor(Math.random() * 5);
@@ -124,6 +128,8 @@ export class StartTestComponent implements OnInit {
         if(params['respuestaTipo'] != undefined){
           this.respuestaTipo = params['respuestaTipo']
         }
+    this.datos.closeSideNav();
+
       });
     this.lista = this.datos.listaPalabras!;
     this.preguntaRespuestasGen()

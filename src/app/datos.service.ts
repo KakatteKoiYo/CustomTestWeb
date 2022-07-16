@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ListaEjemplo} from './listaEjemplo';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import { ListaEjemplo} from './listaEjemplo';
 export class DatosService {
   listaPalabras? : IListaPalabras[];
   listaSeleccionada? : string;
-  
+  sidenav! : MatSidenav;
   editarLista(){
 
   }
@@ -50,6 +52,17 @@ export class DatosService {
   // }
   constructor() { }
 
+  setSidenav(sidenav : MatSidenav){
+    this.sidenav = sidenav
+  }
+
+  closeSideNav(){
+    this.sidenav.close();
+  }
+  openSideNav(){
+    console.log("Open side nav")
+    this.sidenav.open();
+  }
 }
 
 export interface IListaPalabras {
