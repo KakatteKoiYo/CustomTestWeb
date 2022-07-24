@@ -17,11 +17,16 @@ export class StartTestComponent implements OnInit {
   preguntaTipoTemp? : number;
   respuestaTipo : number = 0;
   lugarRespuesta? : number;
-  pregunta? : string;
-  respuesta? : string;
+  pregunta : string = "";
+  respuesta : string = "";
+  preguntaArray : string[] = [];
+  respuestaArray : string[] = [];
+  respuestaUsuarioArray : string[] = [];
   inputRespuesta : string = "";
-  arrayResultado : number[] = [];  
+  arrayResultado : number[] = [];
+
   resultadoBuenas : number = 0;
+  show? : number;
   opciones : string[] = [];
  
 
@@ -78,7 +83,9 @@ export class StartTestComponent implements OnInit {
   }
 
   siguientePregunta(opcionRespuesta : number){
-
+    this.preguntaArray.push(this.pregunta)
+    this.respuestaArray.push(this.respuesta)
+    this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta])
     if(this.lugarRespuesta == opcionRespuesta){
       this.resultadoBuenas += 1
       this.arrayResultado.push(1)

@@ -28,18 +28,34 @@ tr:hover{
 
 }
 .class-input-palabras{
-
     font-size: 1.5em;
+    width: 17.5em;
 }
 
+.class-button-crear{
+    color: white;
+    border-width: 4px;
+    border-color: white;
+    font-size: 1.5em;
+    width: 23em;
+    display: block;
+}
+.class-crearlista-input{
+    font-size: 1.47em;
+    width: 23em;
+}
 .class-tabla{
     width: 60%;
     max-height: 80%;
     overflow:auto;
-
-
+    text-align: center;
 }
 
+.class-crearlista-div{
+    position: absolute ;
+    left: 180px;
+    bottom: 0;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 30px;

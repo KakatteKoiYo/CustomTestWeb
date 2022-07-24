@@ -25,15 +25,16 @@
     margin-top: 100px;
 }
 
+
 .class-resultado-rg{
     margin-top: 10px;
     font-size: 1.3em;
-    display: block;
+    display: inline-block;
+    width: 40px;
     min-width: 40px;
 
     
 }
-
 .red{
     background: red;
 }

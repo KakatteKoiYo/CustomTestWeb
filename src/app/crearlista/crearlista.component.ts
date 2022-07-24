@@ -83,7 +83,7 @@ export class CrearlistaComponent implements OnInit {
     console.log(nombre);
     this.datos.crearLista(nombre, this.arrayPalabras);
     Swal.fire({
-      title: 'Lista creada con éxito',
+      title: 'Lista: ' + this.nombreLista +' creada con éxito',
       icon: 'success',
       allowOutsideClick: false,
       allowEscapeKey: false,
