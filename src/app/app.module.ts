@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { EstudiarlistaComponent } from './estudiarlista/estudiarlista.component';
 import { CrearlistaComponent } from './crearlista/crearlista.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

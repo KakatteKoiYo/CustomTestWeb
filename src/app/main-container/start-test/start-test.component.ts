@@ -1,10 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 import { DatosService, IListaPalabras } from 'src/app/datos.service';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 @Component({
   selector: 'app-start-test',
   templateUrl: './start-test.component.html',
-  styleUrls: ['./start-test.component.css']
+  styleUrls: ['./start-test.component.css',],
+  animations : [
+    trigger('mostrarDetalles', [
+      transition(':enter', [
+        style({ width: "0px", overflow: "hidden" }),
+        animate('200ms', style({ width: "100px" })),
+      ]),
+    ]),
+  ]
 })
 export class StartTestComponent implements OnInit {
   lista! : IListaPalabras[];

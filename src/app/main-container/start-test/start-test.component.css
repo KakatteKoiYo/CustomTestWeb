@@ -67,3 +67,11 @@
 .class-pantalla-finalizar{
     color: white;
 }
+
+.class-detalles{
+    display: inline-block; 
+    margin-left: 5px; 
+    background: green; 
+    margin-top: 10px;
+    position: absolute;
+}

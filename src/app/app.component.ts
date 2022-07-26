@@ -22,7 +22,6 @@ export class AppComponent implements OnInit{
       }})
 
     window.addEventListener("beforeunload", function (e) {
-      
      
       var confirmationMessage = "....";
       // console.log(e);
