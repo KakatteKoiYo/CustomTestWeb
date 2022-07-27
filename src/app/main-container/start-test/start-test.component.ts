@@ -17,7 +17,7 @@ import {
     trigger('mostrarDetalles', [
       transition(':enter', [
         style({ width: "0px", overflow: "hidden" }),
-        animate('200ms', style({ width: "100px" })),
+        animate('300ms', style({ width: "100px" })),
       ]),
     ]),
   ]
@@ -40,6 +40,7 @@ export class StartTestComponent implements OnInit {
   respuestaUsuarioArray : string[] = [];
   inputRespuesta : string = "";
   arrayResultado : number[] = [];
+  arrayResultado2 : number[] = [];
 
   resultadoBuenas : number = 0;
   show? : number;
@@ -104,9 +105,18 @@ export class StartTestComponent implements OnInit {
     this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta])
     if(this.lugarRespuesta == opcionRespuesta){
       this.resultadoBuenas += 1
-      this.arrayResultado.push(1)
+      if(this.arrayResultado.length < 15){
+        this.arrayResultado.push(1)
+      }else{
+        this.arrayResultado2.push(1)
+      }
+        
     }else{
-      this.arrayResultado.push(0)
+      if(this.arrayResultado.length < 15){
+        this.arrayResultado.push(0)
+      }else{
+        this.arrayResultado2.push(0)
+      }
     }
 
     if(this.contadorPregunta == this.cantidadPregunta){

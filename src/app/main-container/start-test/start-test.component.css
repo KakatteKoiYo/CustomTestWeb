@@ -22,19 +22,27 @@
 
 .class-resultado-real{
     position: absolute;
+    user-select: none;
     margin-top: 100px;
+    max-height: 80%;        
+}
+.class-resultado-real2{
+    position: absolute;
+    user-select: none;
+    margin-top: 100px;
+    max-height: 80%;
+    direction: rtl;
+    right: 0px;
 }
 
-
 .class-resultado-rg{
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 1.3em;
     display: inline-block;
     width: 40px;
-    min-width: 40px;
-
-    
+    min-width: 40px;    
 }
+
 .red{
     background: red;
 }
@@ -71,7 +79,16 @@
 .class-detalles{
     display: inline-block; 
     margin-left: 5px; 
-    background: green; 
-    margin-top: 10px;
+    margin-right: 5px; 
     position: absolute;
 }
+
+.class-respuestas{
+    display: block; 
+    font-size: 1.3em;
+    padding-left: 2em; 
+    padding-right: 2em; 
+    overflow: hidden ;
+    white-space: nowrap;
+}
+

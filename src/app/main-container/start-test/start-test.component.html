@@ -2,15 +2,27 @@
     <div ><a [routerLink]="'/test'"><button class="class-salir-button"  (click)="openSideNav()">SALIR</button></a></div>
     <div class = "class-contador">{{contadorPregunta}}/{{cantidadPregunta}}</div>
     <div class="class-resultado-real">
-        <div  *ngFor="let i of arrayResultado; index as j">
+        <div  *ngFor="let i of arrayResultado; index as j; " >
             <span [ngClass]="i == 1 ? 'class-resultado-rg green': 'class-resultado-rg red' " (mouseover)="show= j" (mouseout)="show= undefined">{{j + 1}}</span>
-            <div class="class-detalles">
-                <span  @mostrarDetalles  style="display: block; background: red; padding-left: 2em; padding-right: 2em;" *ngIf="i == 0 && show == j">Error</span>
-                <span @mostrarDetalles   style="display: block; padding-left: 2em; padding-right: 2em;" *ngIf="show == j">{{preguntaArray[j]}}={{respuestaArray[j]}}</span>
+            <div class="class-detalles"  [ngStyle]="i == 1 ? {marginTop: '15px'} : {marginTop: '5px'}">
+                <span  @mostrarDetalles class="class-respuestas red" *ngIf="i == 0 && show == j">{{preguntaArray[j]}} = {{respuestaUsuarioArray[j]}}</span>
+                <span @mostrarDetalles   class="class-respuestas green"  *ngIf="show == j">{{preguntaArray[j]}} = {{respuestaArray[j]}}</span>
                 
             </div>
         </div>
      
+    </div>
+
+    <div class="class-resultado-real2">
+        <div  *ngFor="let i of arrayResultado2; index as k;" >
+            <span [ngClass]="i == 1 ? 'class-resultado-rg green': 'class-resultado-rg red' " (mouseover)="show= k + 15" (mouseout)="show= undefined">{{k + 16}}</span>
+            <div class="class-detalles "  [ngStyle]="i == 1 ? {marginTop: '15px'} : {marginTop: '5px'}">
+                <span  @mostrarDetalles class="class-respuestas red"  *ngIf="i == 0 && show == k + 15">{{preguntaArray[k + 15]}} = {{respuestaUsuarioArray[k + 15]}}</span>
+                <span @mostrarDetalles   class="class-respuestas green"  *ngIf="show == k + 15">{{preguntaArray[k + 15]}} = {{respuestaArray[k + 15]}}</span>
+                
+            </div>
+        </div>
+    
     </div>
     <div class = "class-pregunta">{{pregunta}}</div>
     <div class="class-opciones" *ngIf = "respuestaTipo == 0">
