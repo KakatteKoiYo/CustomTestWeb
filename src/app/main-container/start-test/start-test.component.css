@@ -92,3 +92,20 @@
     white-space: nowrap;
 }
 
+.class-answer-input{
+    margin-top: 3em;
+    font-size: 2em;
+    background: rgb(55, 63, 82);
+    color: white;
+    text-align: center;
+    width: 10em;
+
+}
+.class-pista-button{
+
+    font-size: 1.5em;
+    background: rgb(109, 92, 230);
+    color: white;
+    width: 14em;
+    
+}

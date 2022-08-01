@@ -1,5 +1,5 @@
 th{
-    background: #0c7c77;
+    background: rgb(109, 92, 230);
     border: 1px solid;
     border-color: white;
     min-width: 10em;
@@ -30,6 +30,9 @@ tr:hover{
 .class-input-palabras{
     font-size: 1.5em;
     width: 17.5em;
+    background: rgb(55, 63, 82);
+    color: white;
+    text-align: center;
 }
 
 .class-button-crear{
@@ -43,6 +46,9 @@ tr:hover{
 .class-crearlista-input{
     font-size: 1.47em;
     width: 23em;
+    background: rgb(55, 63, 82);
+    color: white;
+    text-align: center;
 }
 .class-tabla{
     width: 60%;

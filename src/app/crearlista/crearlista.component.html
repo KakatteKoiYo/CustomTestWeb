@@ -2,7 +2,7 @@
 <div style="padding-left: 20px;"><span>Ingresa abajo las palabras que quieras agregar a la lista. Cuando hayas escrito la palabra1 puedes presionar enter para pasar a la palabra2. </span></div>
 <input class="class-input-palabras" id="palabra1" [(ngModel)]="palabra1" #renPalabra1  placeholder="Palabra1..."  (keyup.enter)="cambiarFoco()"  (keyup)="validarTexto()">
 <input class="class-input-palabras" id="palabra2" [(ngModel)]="palabra2" #renPalabra2 placeholder="Palabra2..." [disabled]="isDisabled"  (keypress)="resetBandera()" (keyup.backspace)="regresarFoco()" (keyup.enter)="agregar()">
-<span *ngIf="arrayPalabras.length <= 4">*Para crear una lista se deben ingresar al menos cinco objetos a la lista. </span><span>Numero de objetos en la lista: {{arrayPalabras.length}}</span>
+<div style="margin-left: 10px ; display: inline;"><span *ngIf="arrayPalabras.length <= 4">*Para crear una lista se deben ingresar al menos cinco objetos a la lista. </span><span>Numero de objetos en la lista: {{arrayPalabras.length}}</span></div>
 <table *ngIf="arrayPalabras.length != 0 ">
     <th>Palabra1</th>
     <th>Igual a</th>
@@ -22,5 +22,5 @@
 </div>
 <div *ngIf="arrayPalabras.length >= 5" class="class-crearlista-div">
   <input id="nombre" class="class-crearlista-input" [(ngModel)]="nombreLista" #nombre  placeholder="Elige un nombre..."  >
-  <button class="class-button-crear" [ngStyle]="nombreLista.length == 0 ? {'background-color': 'grey'}: {'background-color': '#0c7c77'} " [disabled]="nombreLista.length == 0" (click)="crear(nombre.value)">Crear lista</button>
+  <button class="class-button-crear" [ngStyle]="nombreLista.length == 0 ? {'background-color': 'grey'}: {'background-color': 'rgb(109, 92, 230)'} " [disabled]="nombreLista.length == 0" (click)="crear(nombre.value)">Crear lista</button>
 </div>

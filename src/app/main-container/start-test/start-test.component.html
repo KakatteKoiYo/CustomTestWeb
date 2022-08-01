@@ -22,7 +22,7 @@
                 
             </div>
         </div>
-    
+
     </div>
     <div class = "class-pregunta">{{pregunta}}</div>
     <div class="class-opciones" *ngIf = "respuestaTipo == 0">
@@ -34,8 +34,9 @@
     </div>
 
     <div class="class-opciones" *ngIf = "respuestaTipo == 1">
-        <div><input class= "class-search-input" id="inputRespuesta" [(ngModel)]="inputRespuesta" #respuesta (keyup.enter)="siguientePreguntaE(respuesta.value)" placeholder="Buscar..."></div>
-        </div>
+        <div><input class= "class-answer-input" id="inputRespuesta" [(ngModel)]="inputRespuesta" #respuesta (keyup.enter)="siguientePreguntaE(respuesta.value)" placeholder="Ingrese respuesta"></div>
+        <div><button class="class-pista-button">PISTA</button></div>
+    </div>
         
 
     </div>
