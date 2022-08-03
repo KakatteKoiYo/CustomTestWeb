@@ -35,12 +35,20 @@
 
     <div class="class-opciones" *ngIf = "respuestaTipo == 1">
         <div><input class= "class-answer-input" id="inputRespuesta" [(ngModel)]="inputRespuesta" #respuesta (keyup.enter)="siguientePreguntaE(respuesta.value)" placeholder="Ingrese respuesta"></div>
-        <div><button class="class-pista-button">PISTA</button></div>
+        <div><button class="class-pista-button" (click)="getPista()">PISTA</button></div>
+        <div id = "pistas" class="class-pistas">
+            <div *ngIf="pistaPrimerLetra != ''">Primer letra: {{pistaPrimerLetra}}</div>
+            <div *ngIf="pistaLongitud != -1">Cantidad de letras: {{pistaLongitud}}</div>
+            <div *ngIf="pistaEspacios != -1">Cantidad de palabras: {{pistaEspacios}}</div>
+        </div>
     </div>
         
 
     </div>
     
     <div *ngIf="pruebaFinalizada == true" class="class-pantalla-finalizar">
-        TERMINASTE LA PRUEBA y obtuviste {{resultadoBuenas}} buenas
+        <div *ngFor="let i of arrayResultado; index as j" style="display: inline;">
+            <span *ngIf="i == 0">X {{preguntaArray[j]}} = {{respuestaUsuarioArray[j]}} / {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>---<span *ngIf="i == 1"> {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>
+        </div>
+       
     </div>

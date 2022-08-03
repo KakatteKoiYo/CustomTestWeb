@@ -41,7 +41,9 @@ export class StartTestComponent implements OnInit {
   inputRespuesta : string = "";
   arrayResultado : number[] = [];
   arrayResultado2 : number[] = [];
-
+  pistaLongitud : number = -1;
+  pistaEspacios : number = -1;
+  pistaPrimerLetra : string = "";
   resultadoBuenas : number = 0;
   show? : number;
   opciones : string[] = [];
@@ -51,6 +53,20 @@ export class StartTestComponent implements OnInit {
 
   openSideNav(){
     this.datos.openSideNav();
+  }
+
+  getPista(){
+    if(this.pistaPrimerLetra == ""){
+      this.pistaPrimerLetra = this.respuesta[0]
+    }else if(this.pistaLongitud == -1){
+      this.pistaLongitud = this.respuesta.length
+    }else{
+      this.pistaEspacios = 1000
+    }
+    
+    console.log(this.pistaPrimerLetra)
+    console.log(this.pistaLongitud)
+    console.log(this.pistaEspacios)
   }
 
   preguntaRespuestasGen(){
@@ -63,7 +79,6 @@ export class StartTestComponent implements OnInit {
       this.pregunta = this.preguntaTipoTemp == 0 ? this.lista[numeroPregunta].palabra1 : this.lista[numeroPregunta].palabra2;
       this.respuesta = this.preguntaTipoTemp == 0 ? this.lista[numeroPregunta].palabra2 : this.lista[numeroPregunta].palabra1;
     }  
-
     if(this.preguntaTipo == 1){
       this.pregunta = this.lista[numeroPregunta].palabra1
       this.respuesta = this.lista[numeroPregunta].palabra2
@@ -130,6 +145,9 @@ export class StartTestComponent implements OnInit {
 
   siguientePreguntaE(valor : string){
     this.inputRespuesta = "";
+    this.pistaPrimerLetra = "";
+    this.pistaLongitud = -1;
+    this.pistaEspacios = -1;
     console.log("Pregunta: " + this.pregunta)
     console.log("Respuesta: " + this.respuesta)
     console.log("Valor: " + valor)
