@@ -43,12 +43,25 @@
             <input id="valor8" type="radio" value="1" name="radioRespuesta" #valor8 (change)="setRespuesta(valor8.value)">
             <label for="valor8">Escrita</label>
         </div>
+        <div *ngIf="radioValor3 == 1">
+            <div style="font-size: 2em; margin-top: 2em;">  <legend>¿Ignorar mayúsculas/minúsculas y tildes?</legend></div>
+            <div class="class-radio">
+                <input id="valor9" type="radio" value="1" name="radioEstricto" #valor9 checked (change)="setIgnorar(valor9.value)">
+                <label for="valor9">Sí</label>
+            </div>
+
+            <div class="class-radio">
+                <input id="valor10" type="radio" value="0" name="radioEstricto" #valor10 (change)="setIgnorar(valor10.value)">
+                <label for="valor10">No</label>
+            </div>
+        </div>
+        
 
 
     </div>
     
 
-    <button routerLink="start" [queryParams]="{cantidadPregunta: radioValor, preguntaTipo: radioValor2, respuestaTipo: radioValor3}" class="class-test-main-button" (click)="swapIniciar()">
+    <button routerLink="start" [queryParams]="{cantidadPregunta: radioValor, preguntaTipo: radioValor2, respuestaTipo: radioValor3, ignorar: radioValor4}" class="class-test-main-button" (click)="swapIniciar()">
         INICIAR PRUEBA
     </button>
 </div>

@@ -17,6 +17,7 @@ export class MainContainerComponent implements OnInit {
   radioValor : number = 10;
   radioValor2 : number = 0;
   radioValor3 : number = 0;
+  radioValor4 : number = 1;
 
   listaSeleccionada? : string;
   form = new FormGroup({
@@ -47,7 +48,9 @@ export class MainContainerComponent implements OnInit {
     this.radioValor3 = Number(valor);
   }
 
-
+  setIgnorar(valor : string){
+    this.radioValor4 = Number(valor)
+  }
   ngOnInit(): void {
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       if(this.router.url != "/test"){

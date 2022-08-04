@@ -42,7 +42,7 @@ export class StartTestComponent implements OnInit {
   arrayResultado : number[] = [];
   arrayResultado2 : number[] = [];
   pistaLongitud : number = -1;
-  pistaEspacios : number = -1;
+  pistaPalabras : number = -1;
   pistaPrimerLetra : string = "";
   resultadoBuenas : number = 0;
   show? : number;
@@ -61,12 +61,12 @@ export class StartTestComponent implements OnInit {
     }else if(this.pistaLongitud == -1){
       this.pistaLongitud = this.respuesta.length
     }else{
-      this.pistaEspacios = 1000
+      this.pistaPalabras = this.respuesta.trim().split(" ").length
     }
     
     console.log(this.pistaPrimerLetra)
     console.log(this.pistaLongitud)
-    console.log(this.pistaEspacios)
+    console.log(this.pistaPalabras)
   }
 
   preguntaRespuestasGen(){
@@ -144,18 +144,29 @@ export class StartTestComponent implements OnInit {
   }
 
   siguientePreguntaE(valor : string){
+    //Reinicio de valores
     this.inputRespuesta = "";
     this.pistaPrimerLetra = "";
     this.pistaLongitud = -1;
-    this.pistaEspacios = -1;
-    console.log("Pregunta: " + this.pregunta)
-    console.log("Respuesta: " + this.respuesta)
-    console.log("Valor: " + valor)
+    this.pistaPalabras = -1;
+    valor = valor.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
+    this.respuesta = this.respuesta.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
+    console.log(this.respuesta)
+    console.log(valor)
     if(valor == this.respuesta){
-      console.log("Correcto!")
       this.resultadoBuenas += 1
+      if(this.arrayResultado.length < 15){
+        this.arrayResultado.push(1)
+      }else{
+        this.arrayResultado2.push(1)
+      }
+        
     }else{
-      console.log("Incorrecto!")
+      if(this.arrayResultado.length < 15){
+        this.arrayResultado.push(0)
+      }else{
+        this.arrayResultado2.push(0)
+      }
     }
     if(this.contadorPregunta == this.cantidadPregunta){
       this.pruebaFinalizada = true;

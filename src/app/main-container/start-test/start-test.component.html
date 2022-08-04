@@ -39,10 +39,10 @@
         <div id = "pistas" class="class-pistas">
             <div *ngIf="pistaPrimerLetra != ''">Primer letra: {{pistaPrimerLetra}}</div>
             <div *ngIf="pistaLongitud != -1">Cantidad de letras: {{pistaLongitud}}</div>
-            <div *ngIf="pistaEspacios != -1">Cantidad de palabras: {{pistaEspacios}}</div>
+            <div *ngIf="pistaPalabras != -1">Cantidad de palabras: {{pistaPalabras}}</div>
         </div>
     </div>
-        
+
 
     </div>
     
@@ -50,5 +50,4 @@
         <div *ngFor="let i of arrayResultado; index as j" style="display: inline;">
             <span *ngIf="i == 0">X {{preguntaArray[j]}} = {{respuestaUsuarioArray[j]}} / {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>---<span *ngIf="i == 1"> {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>
         </div>
-       
     </div>
