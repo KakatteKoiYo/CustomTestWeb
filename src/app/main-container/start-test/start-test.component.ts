@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 import { DatosService, IListaPalabras } from 'src/app/datos.service';
 import {
@@ -23,9 +23,11 @@ import {
   ]
 })
 export class StartTestComponent implements OnInit {
+  @ViewChild('respuesta') input? : ElementRef;
+
   lista! : IListaPalabras[];
 
-  
+  pistas : boolean = true;
   pruebaFinalizada = false;
   contadorPregunta : number = 1;
   cantidadPregunta : number = 10;
@@ -33,6 +35,7 @@ export class StartTestComponent implements OnInit {
   preguntaTipoTemp? : number;
   respuestaTipo : number = 0;
   lugarRespuesta? : number;
+  ignorar : number = 1;
   pregunta : string = "";
   respuesta : string = "";
   preguntaArray : string[] = [];
@@ -56,17 +59,18 @@ export class StartTestComponent implements OnInit {
   }
 
   getPista(){
+
+    this.input?.nativeElement.focus();
+
     if(this.pistaPrimerLetra == ""){
       this.pistaPrimerLetra = this.respuesta[0]
     }else if(this.pistaLongitud == -1){
       this.pistaLongitud = this.respuesta.length
     }else{
       this.pistaPalabras = this.respuesta.trim().split(" ").length
+      this.pistas = false;
     }
     
-    console.log(this.pistaPrimerLetra)
-    console.log(this.pistaLongitud)
-    console.log(this.pistaPalabras)
   }
 
   preguntaRespuestasGen(){
@@ -145,14 +149,24 @@ export class StartTestComponent implements OnInit {
 
   siguientePreguntaE(valor : string){
     //Reinicio de valores
+    this.pistas = true;
+
     this.inputRespuesta = "";
     this.pistaPrimerLetra = "";
     this.pistaLongitud = -1;
     this.pistaPalabras = -1;
-    valor = valor.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
-    this.respuesta = this.respuesta.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
-    console.log(this.respuesta)
-    console.log(valor)
+  
+    this.preguntaArray.push(this.pregunta)
+    this.respuestaArray.push(this.respuesta)
+    this.respuestaUsuarioArray.push(valor)
+
+    if(this.ignorar == 1){
+      valor = valor.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
+      this.respuesta = this.respuesta.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
+    }
+
+    
+    
     if(valor == this.respuesta){
       this.resultadoBuenas += 1
       if(this.arrayResultado.length < 15){
@@ -189,6 +203,9 @@ export class StartTestComponent implements OnInit {
         }
         if(params['respuestaTipo'] != undefined){
           this.respuestaTipo = params['respuestaTipo']
+        }
+        if(params['ignorar'] != undefined){
+          this.ignorar = params['ignorar']
         }
     this.datos.closeSideNav();
 

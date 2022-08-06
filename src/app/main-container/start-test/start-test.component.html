@@ -34,8 +34,8 @@
     </div>
 
     <div class="class-opciones" *ngIf = "respuestaTipo == 1">
-        <div><input class= "class-answer-input" id="inputRespuesta" [(ngModel)]="inputRespuesta" #respuesta (keyup.enter)="siguientePreguntaE(respuesta.value)" placeholder="Ingrese respuesta"></div>
-        <div><button class="class-pista-button" (click)="getPista()">PISTA</button></div>
+        <div><input  class= "class-answer-input" id="inputRespuesta" [(ngModel)]="inputRespuesta" #respuesta (keyup.enter)="siguientePreguntaE(respuesta.value)" placeholder="Ingrese respuesta"></div>
+        <div><button class="class-pista-button" [disabled]="!pistas" [ngStyle]=" !pistas ? {'background-color': 'grey'}: {'background-color': 'rgb(109, 92, 230)'} " (click)="getPista()">PISTA</button></div>
         <div id = "pistas" class="class-pistas">
             <div *ngIf="pistaPrimerLetra != ''">Primer letra: {{pistaPrimerLetra}}</div>
             <div *ngIf="pistaLongitud != -1">Cantidad de letras: {{pistaLongitud}}</div>
