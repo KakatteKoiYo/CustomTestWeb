@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 import { DatosService, IListaPalabras } from 'src/app/datos.service';
 import {
