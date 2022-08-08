@@ -190,6 +190,7 @@ export class StartTestComponent implements OnInit {
       this.preguntaRespuestasGen()
     }
   }
+  
 
   ngOnInit(): void {
     this.activate.queryParams
