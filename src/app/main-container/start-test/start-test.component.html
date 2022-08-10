@@ -47,7 +47,9 @@
     </div>
     
     <div *ngIf="pruebaFinalizada == true" class="class-pantalla-finalizar">
-        <div *ngFor="let i of arrayResultado; index as j" style="display: inline;">
-            <span *ngIf="i == 0">X {{preguntaArray[j]}} = {{respuestaUsuarioArray[j]}} / {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>---<span *ngIf="i == 1"> {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>
+        <div class="class-grid">
+            <div *ngFor="let i of arrayResultado; index as j" style="display: inline;">
+                <span *ngIf="i == 0">X {{preguntaArray[j]}} = {{respuestaUsuarioArray[j]}} / {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>---<span *ngIf="i == 1"> {{preguntaArray[j]}} = {{respuestaArray[j]}}</span>
+            </div>
         </div>
     </div>

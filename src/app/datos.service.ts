@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ListaEjemplo} from './listaEjemplo';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { Observable, Subject } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Injectable({
@@ -10,6 +11,18 @@ export class DatosService {
   listaPalabras? : IListaPalabras[];
   listaSeleccionada? : string;
   sidenav! : MatSidenav;
+
+  private subject = new Subject<any>();
+
+  actualizarListaCB(ultimaLista: string) {
+      this.subject.next(ultimaLista);
+  }
+
+  obtenerUltimaLista(): Observable<any> {
+      return this.subject.asObservable();
+  }
+
+
   editarLista(){
 
   }
@@ -20,7 +33,7 @@ export class DatosService {
   
   crearLista(nombre : string, lista : object[]){
     
-    ListaEjemplo.push({[`${nombre}`] : lista});
+    ListaEjemplo.unshift({[`${nombre}`] : lista});
     
   }
 

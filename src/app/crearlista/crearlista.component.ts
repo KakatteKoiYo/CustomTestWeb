@@ -89,6 +89,7 @@ export class CrearlistaComponent implements OnInit {
       allowEscapeKey: false,
     }).then((result) => {
       if (result.value) {
+        this.datos.actualizarListaCB(this.nombreLista)
         this.router.navigateByUrl("/home")
 
       }})
