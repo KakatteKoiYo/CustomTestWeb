@@ -118,6 +118,7 @@ export class StartTestComponent implements OnInit {
     
   }
 
+
   siguientePregunta(opcionRespuesta : number){
     this.preguntaArray.push(this.pregunta)
     this.respuestaArray.push(this.respuesta)

@@ -120,4 +120,24 @@
     color: white;
     font-size: 1.5em;
 }
+.class-resultado-final{
+    width: 100%; 
+   
+}
+.class-resultado-final div{
+    width: 50%; 
+    display: inline-block; 
+    text-align: center;
+    font-size: 2em;
+}
 
+.class-resultado-final button{
+    width: 100%; 
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 1.1em;
+}
