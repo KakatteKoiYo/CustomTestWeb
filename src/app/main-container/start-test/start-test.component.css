@@ -122,6 +122,8 @@
 }
 .class-resultado-final{
     width: 100%; 
+    position: absolute;
+    bottom: 20px;
    
 }
 .class-resultado-final div{
