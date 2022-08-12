@@ -132,6 +132,15 @@
     text-align: center;
     font-size: 2em;
 }
+.class-item-final{
+    background: black;
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    font-size: 1.1em;
+    display: inline-block;
+    color: white;
+}
 
 .class-resultado-final button{
     width: 100%; 
