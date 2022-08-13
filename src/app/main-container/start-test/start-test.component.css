@@ -132,6 +132,21 @@
     text-align: center;
     font-size: 2em;
 }
+.class-item-container{
+    background: black;
+    border-width: 3px;
+    border-color: white;
+    text-align: center;
+    font-size: 1.1em;
+    display: inline-block;
+    color: white;
+}
+
+.class-item-final{
+    margin: 10px;
+    cursor: pointer;
+    font-size: 2em;
+}
 
 .class-resultado-final button{
     width: 100%; 
