@@ -44,6 +44,7 @@ export class StartTestComponent implements OnInit {
   inputRespuesta : string = "";
   arrayResultado : number[] = [];
   arrayResultado2 : number[] = [];
+  arrayResultadoTotal: number[] = [];
   pistaLongitud : number = -1;
   pistaPalabras : number = -1;
   pistaPrimerLetra : string = "";
@@ -130,6 +131,7 @@ export class StartTestComponent implements OnInit {
       }else{
         this.arrayResultado2.push(1)
       }
+      this.arrayResultadoTotal.push(1)
         
     }else{
       if(this.arrayResultado.length < 15){
@@ -137,6 +139,7 @@ export class StartTestComponent implements OnInit {
       }else{
         this.arrayResultado2.push(0)
       }
+      this.arrayResultadoTotal.push(0)
     }
 
     if(this.contadorPregunta == this.cantidadPregunta){
@@ -175,6 +178,7 @@ export class StartTestComponent implements OnInit {
       }else{
         this.arrayResultado2.push(1)
       }
+      this.arrayResultadoTotal.push(1)
         
     }else{
       if(this.arrayResultado.length < 15){
@@ -182,6 +186,7 @@ export class StartTestComponent implements OnInit {
       }else{
         this.arrayResultado2.push(0)
       }
+      this.arrayResultadoTotal.push(0)
     }
     if(this.contadorPregunta == this.cantidadPregunta){
       this.pruebaFinalizada = true;

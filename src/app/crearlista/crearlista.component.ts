@@ -90,7 +90,7 @@ export class CrearlistaComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.datos.actualizarListaCB(this.nombreLista)
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/test")
 
       }})
   }
