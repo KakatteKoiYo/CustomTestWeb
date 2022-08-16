@@ -47,20 +47,20 @@
     </div>
     
     <div *ngIf="pruebaFinalizada == true" class="class-pantalla-finalizar">
-        <div class="class-user-answer">
-            d
+        <div class="class-user-answer" >
+            <div style= "background-color: rgb(133, 1, 1);"  *ngIf="resultadoSel == 0">{{preguntaSel}} = {{respuestaUsuarioSel}}</div>
         </div>
-        <div class="class-user-answer">
-            a
+        <div  class="class-user-answer">
+             <div style="background-color: rgb(0, 75, 0); margin:0;padding:0;height: 100%;" >{{preguntaSel}} = {{respuestaSel}}</div>
         </div>
         <div class="class-grid-container">
             <div class="class-grid">
-                <div *ngFor="let i of arrayResultadoTotal; index as j" class="class-item-container">
-                    <div class="class-item-final" style="background-color: rgb(133, 1, 1);" *ngIf="i == 0">{{j+1}}</div><div class="class-item-final" style="background-color: rgb(0, 75, 0);" *ngIf="i == 1">{{j+1}}</div>
+                <div *ngFor="let i of arrayResultadoTotal; index as j" class="class-item-container" (click)="mostrarCorrecta(i, preguntaArray[j], respuestaArray[j], respuestaUsuarioArray[j])">
+                    <div class="class-item-final" style="background-color: rgb(133, 1, 1);" *ngIf="i == 0">{{preguntaArray[j]}}</div><div class="class-item-final" style="background-color: rgb(0, 75, 0);" *ngIf="i == 1">{{preguntaArray[j]}}</div>
                 </div>
             </div>
         </div>
         <div class="class-resultado-final">
-            <div ><a  [routerLink]="'/test'"><button (click)="openSideNav()">SALIR</button></a></div><div>{{(resultadoBuenas * 100) / cantidadPregunta}}%</div>
+            <div ><a  [routerLink]="'/test'"><button (click)="openSideNav()">SALIR</button></a></div><div>PRECISIÓN: {{(resultadoBuenas * 100) / cantidadPregunta}}%</div>
         </div>
     </div>

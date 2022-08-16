@@ -9,6 +9,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 @Component({
   selector: 'app-start-test',
   templateUrl: './start-test.component.html',
@@ -50,10 +51,29 @@ export class StartTestComponent implements OnInit {
   pistaPrimerLetra : string = "";
   resultadoBuenas : number = 0;
   show? : number;
+  preguntaSel? : string;
+  respuestaSel? : string;
+  respuestaUsuarioSel? : string;
+  resultadoSel? : number;
   opciones : string[] = [];
  
 
   constructor(private activate : ActivatedRoute, private datos: DatosService) { }
+
+  mostrarCorrecta(resultado : number, pregunta : string, respuesta : string, respuestaUsuario : string){
+    this.preguntaSel = pregunta;
+    this.respuestaSel = respuesta;
+    this.respuestaUsuarioSel = respuestaUsuario;
+    this.resultadoSel = resultado;
+    
+    if(resultado == 1){
+      
+    }else{
+
+    }
+    
+    
+  }
 
   openSideNav(){
     this.datos.openSideNav();
@@ -121,25 +141,25 @@ export class StartTestComponent implements OnInit {
 
 
   siguientePregunta(opcionRespuesta : number){
-    this.preguntaArray.push(this.pregunta)
-    this.respuestaArray.push(this.respuesta)
-    this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta])
+    this.preguntaArray.push(this.pregunta);
+    this.respuestaArray.push(this.respuesta);
+    this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta]);
     if(this.lugarRespuesta == opcionRespuesta){
       this.resultadoBuenas += 1
       if(this.arrayResultado.length < 15){
-        this.arrayResultado.push(1)
+        this.arrayResultado.push(1);
       }else{
-        this.arrayResultado2.push(1)
+        this.arrayResultado2.push(1);
       }
-      this.arrayResultadoTotal.push(1)
+      this.arrayResultadoTotal.push(1);
         
     }else{
       if(this.arrayResultado.length < 15){
-        this.arrayResultado.push(0)
+        this.arrayResultado.push(0);
       }else{
-        this.arrayResultado2.push(0)
+        this.arrayResultado2.push(0);
       }
-      this.arrayResultadoTotal.push(0)
+      this.arrayResultadoTotal.push(0);
     }
 
     if(this.contadorPregunta == this.cantidadPregunta){
@@ -147,7 +167,7 @@ export class StartTestComponent implements OnInit {
     }
     else{
       this.contadorPregunta += 1
-      this.preguntaRespuestasGen()
+      this.preguntaRespuestasGen();
     }
   }
 
@@ -165,35 +185,35 @@ export class StartTestComponent implements OnInit {
     this.respuestaUsuarioArray.push(valor)
 
     if(this.ignorar == 1){
-      valor = valor.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
-      this.respuesta = this.respuesta.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n")
+      valor = valor.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n");
+      this.respuesta = this.respuesta.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("u", "ú").replace("ñ", "n");
     }
 
     
     
     if(valor == this.respuesta){
-      this.resultadoBuenas += 1
+      this.resultadoBuenas += 1;
       if(this.arrayResultado.length < 15){
-        this.arrayResultado.push(1)
+        this.arrayResultado.push(1);
       }else{
-        this.arrayResultado2.push(1)
+        this.arrayResultado2.push(1);
       }
-      this.arrayResultadoTotal.push(1)
+      this.arrayResultadoTotal.push(1);
         
     }else{
       if(this.arrayResultado.length < 15){
-        this.arrayResultado.push(0)
+        this.arrayResultado.push(0);
       }else{
-        this.arrayResultado2.push(0)
+        this.arrayResultado2.push(0);
       }
-      this.arrayResultadoTotal.push(0)
+      this.arrayResultadoTotal.push(0);
     }
     if(this.contadorPregunta == this.cantidadPregunta){
       this.pruebaFinalizada = true;
     }
     else{
-      this.contadorPregunta += 1
-      this.preguntaRespuestasGen()
+      this.contadorPregunta += 1;
+      this.preguntaRespuestasGen();
     }
   }
   
@@ -206,19 +226,19 @@ export class StartTestComponent implements OnInit {
           this.cantidadPregunta = params['cantidadPregunta'];
         }
         if(params['preguntaTipo'] != undefined){
-          this.preguntaTipo = params['preguntaTipo']
+          this.preguntaTipo = params['preguntaTipo'];
         }
         if(params['respuestaTipo'] != undefined){
-          this.respuestaTipo = params['respuestaTipo']
+          this.respuestaTipo = params['respuestaTipo'];
         }
         if(params['ignorar'] != undefined){
-          this.ignorar = params['ignorar']
+          this.ignorar = params['ignorar'];
         }
     this.datos.closeSideNav();
 
       });
     this.lista = this.datos.listaPalabras!;
-    this.preguntaRespuestasGen()
+    this.preguntaRespuestasGen();
   }
 
 }

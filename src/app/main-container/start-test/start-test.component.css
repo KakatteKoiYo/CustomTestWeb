@@ -92,6 +92,8 @@
 
 .class-user-answer{
     min-height: 20%;
+    height: 100%;
+    text-align: center;
 }
 
 .class-detalles{
@@ -151,7 +153,8 @@
 }
 
 .class-item-final{
-    margin: 15px;
+    min-width: 10em;
+    margin: 10px;
     cursor: pointer;
     font-size: 2em;
 }
