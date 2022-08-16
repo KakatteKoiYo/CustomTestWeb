@@ -76,11 +76,22 @@
 
 .class-pantalla-finalizar{
     color: white;
+    height: 100%;
+}
+
+.class-grid-container{
+    border: 3px solid rgb(255, 255, 255);
+    min-height: 50%;
 }
 
 .class-grid{
     display: grid;
+    
     grid-template-columns: auto auto auto auto auto;
+}
+
+.class-user-answer{
+    min-height: 20%;
 }
 
 .class-detalles{
@@ -134,16 +145,13 @@
 }
 .class-item-container{
     background: black;
-    border-width: 3px;
-    border-color: white;
     text-align: center;
     font-size: 1.1em;
-    display: inline-block;
     color: white;
 }
 
 .class-item-final{
-    margin: 10px;
+    margin: 15px;
     cursor: pointer;
     font-size: 2em;
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router'
 import { DatosService } from '../datos.service';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class SidenavComponent implements OnInit {
   listasDisponibles? : string[] = [];
   ruta? : string;
-  suscription? : Subscription;
+
   constructor(private datos: DatosService, private router: Router, private sidenav : MatSidenav) {
   
     this.datos.obtenerUltimaLista().subscribe(lista => {
@@ -34,7 +33,8 @@ export class SidenavComponent implements OnInit {
 
   getValores(valor : string){
       this.datos.getValores(valor);
-      this.router.navigateByUrl("/home")
+      this.datos.actualizarListaCB(valor);
+      this.router.navigateByUrl("/test")
       // this.router.navigateByUrl("/test")
   }
 

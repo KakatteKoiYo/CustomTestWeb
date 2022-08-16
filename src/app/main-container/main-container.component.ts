@@ -10,9 +10,7 @@ import { DatosService } from '../datos.service';
   styleUrls: ['./main-container.component.css']
 })
 export class MainContainerComponent implements OnInit {
-  constructor(private router: Router, private datos : DatosService, private activate: ActivatedRoute) {
-    
-  }
+
   iniciar = false;
   radioValor : number = 10;
   radioValor2 : number = 0;
@@ -24,6 +22,13 @@ export class MainContainerComponent implements OnInit {
     cantidadPreguntas: new FormControl('')
   });
 
+
+  constructor(private router: Router, private datos : DatosService, private activate: ActivatedRoute) {
+    this.datos.obtenerUltimaLista().subscribe(lista => {
+    this.listaSeleccionada = lista;
+    });
+    
+  }
 
   swapIniciar(){
     if(this.iniciar== false){
