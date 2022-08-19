@@ -1,7 +1,8 @@
 <div *ngIf="iniciar == false" class="class-test-main">
+    <countdown [config]="{ leftTime: 30 }"></countdown>
     <div>
         <div class="class-listaSel">{{listaSeleccionada}}</div>
-        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona la cantidad de preguntas:</legend></div>
+        <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona la cantidad de preguntas:</legend></div>
         <div class="class-radio">
             <input id="valor1" type="radio" value="10" name="radioCantidad" #valor1 checked (change)="setCantidad(valor1.value)">
             <label for="valor1">10</label>
@@ -17,7 +18,7 @@
             <label for="valor3">30</label>
         </div>
 
-        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona cuál será la pregunta:</legend></div>
+        <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona cuál será la pregunta:</legend></div>
         <div class="class-radio">
             <input id="valor4" type="radio" value="0" name="radioPregunta" #valor4 checked (change)="setPregunta(valor4.value)">
             <label for="valor4">Ambas</label>
@@ -33,7 +34,23 @@
             <label for="valor6">Palabra2</label>
         </div>
 
-        <div style="font-size: 2em; margin-top: 2em;">  <legend>Selecciona el tipo de respuesta:</legend></div>
+        <div style="font-size: 2em; margin-top:1em;">  <legend>Tiempo:</legend></div>
+        <div class="class-radio">
+            <input id="valor11" type="radio" value="0" name="radioRespuesta" #valor11 checked (change)="setTiempo(valor11.value)">
+            <label for="valor11">NO</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor12" type="radio" value="1" name="radioRespuesta" #valor12 (change)="setTiempo(valor12.value)">
+            <label for="valor12">10s</label>
+        </div>
+
+        <div class="class-radio">
+            <input id="valor8" type="radio" value="2" name="radioRespuesta" #valor13 (change)="setTiempo(valor13.value)">
+            <label for="valor8">5s</label>
+        </div>
+
+        <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona el tipo de respuesta:</legend></div>
         <div class="class-radio">
             <input id="valor7" type="radio" value="0" name="radioRespuesta" #valor7 checked (change)="setRespuesta(valor7.value)">
             <label for="valor7">Opciones</label>
@@ -60,7 +77,7 @@
 
     </div>
     
-
+    
     <button routerLink="start" [queryParams]="{cantidadPregunta: radioValor, preguntaTipo: radioValor2, respuestaTipo: radioValor3, ignorar: radioValor4}" class="class-test-main-button" (click)="swapIniciar()">
         INICIAR PRUEBA
     </button>

@@ -21,6 +21,7 @@
     "@angular/router": "^14.0.0",
     "angular-font-awesome": "^3.1.2",
     "font-awesome": "^4.7.0",
+    "ngx-countdown": "^14.0.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.4.19",
     "tslib": "^2.3.0",

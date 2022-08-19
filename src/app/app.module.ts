@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { EstudiarlistaComponent } from './estudiarlista/estudiarlista.component';
 import { CrearlistaComponent } from './crearlista/crearlista.component';
+import { CountdownModule } from 'ngx-countdown';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CrearlistaComponent } from './crearlista/crearlista.component';
     MatListModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

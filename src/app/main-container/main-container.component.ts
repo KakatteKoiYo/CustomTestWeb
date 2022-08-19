@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DatosService } from '../datos.service';
+import { CountdownConfig, CountdownEvent } from 'ngx-countdown';
 
 
 @Component({
@@ -48,9 +49,16 @@ export class MainContainerComponent implements OnInit {
     this.radioValor2 = Number(valor);
     console.log("radioValor2: " + this.radioValor2)
   }
+
+  setTiempo(valor : string){
+    
+
+  }
+
   setRespuesta(valor : string){
     
     this.radioValor3 = Number(valor);
+    this.radioValor4 = 1;
   }
 
   setIgnorar(valor : string){
