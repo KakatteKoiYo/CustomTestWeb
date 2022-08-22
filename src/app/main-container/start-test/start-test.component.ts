@@ -70,11 +70,17 @@ export class StartTestComponent implements OnInit {
   handleEvent(evento : CountdownEvent){
     console.log(evento.action)
     if(evento.action == "done"){
+      if(this.respuestaTipo == 0){
+        this.siguientePregunta(-1);
 
-       this.siguientePregunta(-1);
+      }else if(this,this.respuestaTipo == 1){
+        this.siguientePreguntaE("N/A");
+
+      }
        
     }
     if(evento.action == "notify"){
+      
 
       this.timeNotify = true;
       
@@ -163,7 +169,7 @@ export class StartTestComponent implements OnInit {
 
 
   siguientePregunta(opcionRespuesta : number){
-    //this.countdown?.restart();
+    this.countdown?.restart();
     this.timeNotify = false;
     this.preguntaArray.push(this.pregunta);
     this.respuestaArray.push(this.respuesta);
@@ -201,6 +207,8 @@ export class StartTestComponent implements OnInit {
 
   siguientePreguntaE(valor : string){
     //Reinicio de valores
+    this.countdown?.restart();
+    this.timeNotify = false;
     this.pistas = true;
 
     this.inputRespuesta = "";

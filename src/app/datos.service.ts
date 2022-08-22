@@ -81,8 +81,10 @@ export class DatosService {
 export interface IListaPalabras {
     palabra1 : string;
     palabra2 : string;
+    descripcion : string;
+    nivel : number;
 }
 export interface IListaObjeto {
-  nombreLista : string;
-  listaObjetos : IListaPalabras[];
+  [key : string] : IListaPalabras[]
+  
 }

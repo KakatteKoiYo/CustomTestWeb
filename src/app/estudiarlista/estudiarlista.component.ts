@@ -31,7 +31,7 @@ export class EstudiarlistaComponent implements OnInit {
       for(let i of this.listaPalabras!){
         
         if(i.palabra1.toLowerCase().trim().search(valor.toLowerCase()) != -1 || i.palabra2.toLowerCase().trim().search(valor.toLowerCase()) != -1){
-          this.listaPalabrasFiltro.push({palabra1: i.palabra1, palabra2: i.palabra2})
+          this.listaPalabrasFiltro.push({palabra1: i.palabra1, palabra2: i.palabra2, descripcion : "---", nivel : 0})
         }
       }
     }
