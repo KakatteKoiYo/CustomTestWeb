@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DatosService } from '../datos.service';
-import { CountdownConfig, CountdownEvent } from 'ngx-countdown';
+
 
 
 @Component({
@@ -17,6 +17,7 @@ export class MainContainerComponent implements OnInit {
   radioValor2 : number = 0;
   radioValor3 : number = 0;
   radioValor4 : number = 1;
+  radioValor5 : number = 0;
 
   listaSeleccionada? : string;
   form = new FormGroup({
@@ -30,6 +31,8 @@ export class MainContainerComponent implements OnInit {
     });
     
   }
+
+
 
   swapIniciar(){
     if(this.iniciar== false){
@@ -51,7 +54,7 @@ export class MainContainerComponent implements OnInit {
   }
 
   setTiempo(valor : string){
-    
+    this.radioValor5 = Number(valor);
 
   }
 

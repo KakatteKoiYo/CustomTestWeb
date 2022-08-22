@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 import { DatosService, IListaPalabras } from 'src/app/datos.service';
+import { CountdownConfig, CountdownEvent, CountdownComponent } from 'ngx-countdown';
 import {
   trigger,
   state,
@@ -9,7 +10,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
-import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
+
 @Component({
   selector: 'app-start-test',
   templateUrl: './start-test.component.html',
@@ -25,9 +26,13 @@ import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 })
 export class StartTestComponent implements OnInit {
   @ViewChild('respuesta') input? : ElementRef;
+  @ViewChild('cd', { static: false }) private countdown?: CountdownComponent;
+  
+  
 
   lista! : IListaPalabras[];
 
+  timeNotify : boolean = false;
   pistas : boolean = true;
   pruebaFinalizada = false;
   contadorPregunta : number = 1;
@@ -56,9 +61,26 @@ export class StartTestComponent implements OnInit {
   respuestaUsuarioSel? : string;
   resultadoSel? : number;
   opciones : string[] = [];
+  tiempo : number = 0;
  
 
   constructor(private activate : ActivatedRoute, private datos: DatosService) { }
+
+
+  handleEvent(evento : CountdownEvent){
+    console.log(evento.action)
+    if(evento.action == "done"){
+
+       this.siguientePregunta(-1);
+       
+    }
+    if(evento.action == "notify"){
+
+      this.timeNotify = true;
+      
+   }
+    
+  }
 
   mostrarCorrecta(resultado : number, pregunta : string, respuesta : string, respuestaUsuario : string){
     this.preguntaSel = pregunta;
@@ -141,9 +163,15 @@ export class StartTestComponent implements OnInit {
 
 
   siguientePregunta(opcionRespuesta : number){
+    //this.countdown?.restart();
+    this.timeNotify = false;
     this.preguntaArray.push(this.pregunta);
     this.respuestaArray.push(this.respuesta);
-    this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta]);
+    if(opcionRespuesta == -1){
+      this.respuestaUsuarioArray.push("N/A");
+    }else{
+      this.respuestaUsuarioArray.push(this.opciones[opcionRespuesta]);
+    }
     if(this.lugarRespuesta == opcionRespuesta){
       this.resultadoBuenas += 1
       if(this.arrayResultado.length < 15){
@@ -233,6 +261,9 @@ export class StartTestComponent implements OnInit {
         }
         if(params['ignorar'] != undefined){
           this.ignorar = params['ignorar'];
+        }
+        if(params['tiempo'] != undefined){
+          this.tiempo = params['tiempo'];
         }
     this.datos.closeSideNav();
 

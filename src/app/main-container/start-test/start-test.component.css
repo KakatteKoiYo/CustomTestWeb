@@ -51,7 +51,17 @@
     background: green;
 }
 
+.class-countdown{
+    position: absolute;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    width: 1.5em;
+    border: 2px solid white;
+    top: 7%;
+    left: 80%;
 
+}
 
 .class-pregunta{
     text-align: center;
