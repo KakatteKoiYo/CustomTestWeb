@@ -60,7 +60,7 @@ export class CrearlistaComponent implements OnInit {
   agregar(){
     console.log(this.palabra1)
     console.log(this.palabra2)
-    this.arrayPalabras.push({palabra1 : this.palabra1, palabra2 : this.palabra2})  
+    this.arrayPalabras.push({palabra1 : this.palabra1, palabra2 : this.palabra2, descripcion : "---", nivel : 0})  
     console.log(this.arrayPalabras)
 
     this.palabra1 = "";
@@ -68,9 +68,8 @@ export class CrearlistaComponent implements OnInit {
 
     this.inputPalabra1?.nativeElement.focus();
     this.isDisabled = true;
+    this.datos.updateFakeCoockie([1]);
 
-
-    
   }
 
   eliminar(index: number){

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ListaEjemplo} from './listaEjemplo';
+import { ListaEjemplo, coockieSim} from './listaEjemplo';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { Observable, Subject } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -31,7 +31,7 @@ export class DatosService {
    
   }
   
-  crearLista(nombre : string, lista : object[]){
+  crearLista(nombre : string, lista : IListaPalabras[]){
     
     ListaEjemplo.unshift({[`${nombre}`] : lista});
     
@@ -76,6 +76,18 @@ export class DatosService {
     console.log("Open side nav")
     this.sidenav.open();
   }
+
+  getFakeCoockieValue() : object{
+    return coockieSim;
+  }
+
+  updateFakeCoockie(values : number[]) : void{
+    let i;
+    for(i in coockieSim){
+      
+    }
+
+  } 
 }
 
 export interface IListaPalabras {
@@ -87,4 +99,12 @@ export interface IListaPalabras {
 export interface IListaObjeto {
   [key : string] : IListaPalabras[]
   
+}
+
+export interface opcionesCoockie {
+  opcion1 : number;
+  opcion2 : number;
+  opcion3 : number;
+  opcion4 : number;
+  opcion5 : number;
 }

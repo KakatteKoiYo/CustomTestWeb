@@ -124,7 +124,7 @@ export class StartTestComponent implements OnInit {
 
   preguntaRespuestasGen(){
     let numeroPregunta = Math.floor(Math.random() * this.lista.length);
-    this.lugarRespuesta = Math.floor(Math.random() * 5);
+    this.lugarRespuesta = Math.floor(Math.random() * 5);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
     let listaNumerosUsados : number[] = [numeroPregunta];
 
     if(this.preguntaTipo == 0){

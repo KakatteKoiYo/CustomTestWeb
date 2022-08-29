@@ -1,5 +1,5 @@
-import { IListaObjeto, IListaPalabras } from "./datos.service"
-export const ListaEjemplo : object[] = [
+import { IListaObjeto, opcionesCoockie} from "./datos.service"
+export const ListaEjemplo : IListaObjeto[] = [
     {"Animales Inglés" : [
         {palabra1: 'Bull', palabra2: 'Toro', descripcion: "---", nivel : 0},
         {palabra1: 'Cow', palabra2: 'Vaca', descripcion: "---", nivel : 0},
@@ -231,6 +231,13 @@ export const ListaEjemplo : object[] = [
     ]
 }]
             
+export const coockieSim : opcionesCoockie = {
+    opcion1 : 0,
+    opcion2 : 0,
+    opcion3 : 0,
+    opcion4 : 0,
+    opcion5 : 0,
+}
 
 
 

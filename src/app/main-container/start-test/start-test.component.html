@@ -1,6 +1,6 @@
 <div *ngIf="pruebaFinalizada == false">
     <div ><a [routerLink]="'/test'"><button class="class-salir-button"  (click)="openSideNav()">SALIR</button></a> </div>
-    <div *ngIf="tiempo != 0" class="class-countdown" [ngStyle]="timeNotify == false ? {color : null} : {color : 'red'} "><countdown  #cd [config]="{ leftTime: timeNotify == false ? tiempo : 3, format: timeNotify == false ? 's' : 's.S', notify: 3 }" (event)="handleEvent($event)"></countdown></div> 
+    <div *ngIf="tiempo != 0" class="class-countdown" [ngStyle]="timeNotify == false ? {color : null} : {color : 'red'} "><div>Tiempo</div> <countdown  #cd [config]="{ leftTime: timeNotify == false ? tiempo : 3, format: timeNotify == false ? 's' : 's.S', notify: 3 }" (event)="handleEvent($event)"></countdown></div> 
     <div class = "class-contador">{{contadorPregunta}}/{{cantidadPregunta}}</div>
     <div class="class-resultado-real">
         <div  *ngFor="let i of arrayResultado; index as j; " >

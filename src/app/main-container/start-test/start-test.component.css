@@ -56,7 +56,7 @@
     text-align: center;
     font-size: 2em;
     padding: 10px;
-    width: 1.5em;
+    width: 4em;
     border: 2px solid white;
     top: 7%;
     left: 80%;
@@ -162,7 +162,7 @@
 }
 
 .class-item-final{
-    min-width: 10em;
+    min-width: 20%;
     margin: 10px;
     cursor: pointer;
     font-size: 2em;
