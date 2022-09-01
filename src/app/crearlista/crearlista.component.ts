@@ -68,7 +68,6 @@ export class CrearlistaComponent implements OnInit {
 
     this.inputPalabra1?.nativeElement.focus();
     this.isDisabled = true;
-    this.datos.updateFakeCoockie([1]);
 
   }
 

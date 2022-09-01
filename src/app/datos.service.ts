@@ -82,12 +82,15 @@ export class DatosService {
   }
 
   updateFakeCoockie(values : number[]) : void{
-    let i;
-    for(i in coockieSim){
-      
+    
+    Object.keys(coockieSim).forEach((key , index) => {
+      coockieSim[key] = values[index] 
+
+    })
+     
     }
 
-  } 
+  
 }
 
 export interface IListaPalabras {
@@ -102,9 +105,5 @@ export interface IListaObjeto {
 }
 
 export interface opcionesCoockie {
-  opcion1 : number;
-  opcion2 : number;
-  opcion3 : number;
-  opcion4 : number;
-  opcion5 : number;
+  [key : string] : number;
 }
