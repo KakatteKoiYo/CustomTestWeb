@@ -1,4 +1,4 @@
-import { IListaObjeto, opcionesCoockie} from "./datos.service"
+import { IListaObjeto, opcionesCookie} from "./datos.service"
 export const ListaEjemplo : IListaObjeto[] = [
     {"Animales Inglés" : [
         {palabra1: 'Bull', palabra2: 'Toro', descripcion: "---", nivel : 0},
@@ -231,11 +231,11 @@ export const ListaEjemplo : IListaObjeto[] = [
     ]
 }]
             
-export const coockieSim : opcionesCoockie = {
+export const cookieSim : opcionesCookie = {
     opcion1 : 0,
     opcion2 : 0,
     opcion3 : 0,
-    opcion4 : 0,
+    opcion4 : 1,
     opcion5 : 0,
 }
 

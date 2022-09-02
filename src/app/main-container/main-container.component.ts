@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { DatosService } from '../datos.service';
+import { DatosService, opcionesCookie } from '../datos.service';
+
 
 
 
@@ -13,11 +14,11 @@ import { DatosService } from '../datos.service';
 export class MainContainerComponent implements OnInit {
 
   iniciar = false;
-  radioValor : number = 10;
-  radioValor2 : number = 0;
-  radioValor3 : number = 0;
-  radioValor4 : number = 1;
-  radioValor5 : number = 0;
+  radioValor? : number;
+  radioValor2? : number;
+  radioValor3? : number;
+  radioValor4? : number;
+  radioValor5? : number;
 
   listaSeleccionada? : string;
   form = new FormGroup({
@@ -61,17 +62,25 @@ export class MainContainerComponent implements OnInit {
   setRespuesta(valor : string){
     
     this.radioValor3 = Number(valor);
-    this.radioValor4 = 1;
+    
   }
 
   setIgnorar(valor : string){
     this.radioValor4 = Number(valor)
   }
   ngOnInit(): void {
+      let keys
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       if(this.router.url != "/test"){
         this.iniciar = true;
       }
       this.listaSeleccionada = this.datos.listaSeleccionada
+      keys = Object.values(this.datos.getFakeCookieValue())
+      this.radioValor = keys[0]
+      this.radioValor2 = keys[1]
+      this.radioValor3 = keys[2]
+      this.radioValor4 = keys[3]
+      this.radioValor5 = keys[4]
+      console.log('Radio valor: ' + this.radioValor)
   }
 }

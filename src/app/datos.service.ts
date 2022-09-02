@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ListaEjemplo, coockieSim} from './listaEjemplo';
+import { ListaEjemplo, cookieSim} from './listaEjemplo';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { Observable, Subject } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -77,14 +77,14 @@ export class DatosService {
     this.sidenav.open();
   }
 
-  getFakeCoockieValue() : object{
-    return coockieSim;
+  getFakeCookieValue() : opcionesCookie{
+    return cookieSim;
   }
 
-  updateFakeCoockie(values : number[]) : void{
+  updateFakeCookie(values : number[]) : void{
     
-    Object.keys(coockieSim).forEach((key , index) => {
-      coockieSim[key] = values[index] 
+    Object.keys(cookieSim).forEach((key , index) => {
+      cookieSim[key] = values[index] 
 
     })
      
@@ -104,6 +104,6 @@ export interface IListaObjeto {
   
 }
 
-export interface opcionesCoockie {
+export interface opcionesCookie {
   [key : string] : number;
 }

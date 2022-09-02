@@ -4,71 +4,71 @@
         <div class="class-listaSel">{{listaSeleccionada}}</div>
         <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona la cantidad de preguntas:</legend></div>
         <div class="class-radio">
-            <input id="valor1" type="radio" value="10" name="radioCantidad" #valor1 checked (change)="setCantidad(valor1.value)">
+            <input id="valor1" type="radio" value="0" name="radioCantidad" #valor1 [checked] = 'radioValor == 0' (change)="setCantidad(valor1.value)">
             <label for="valor1">10</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor2" type="radio" value="20" name="radioCantidad" #valor2 (change)="setCantidad(valor2.value)">
+            <input id="valor2" type="radio" value="1" name="radioCantidad" #valor2 [checked] = 'radioValor == 1' (change)="setCantidad(valor2.value)">
             <label for="valor2">20</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor3" type="radio" value="30" name="radioCantidad" #valor3 (change)="setCantidad(valor3.value)">
+            <input id="valor3" type="radio" value="2" name="radioCantidad" #valor3 [checked] = 'radioValor == 2' (change)="setCantidad(valor3.value)">
             <label for="valor3">30</label>
         </div>
 
         <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona cuál será la pregunta:</legend></div>
         <div class="class-radio">
-            <input id="valor4" type="radio" value="0" name="radioPregunta" #valor4 checked (change)="setPregunta(valor4.value)">
+            <input id="valor4" type="radio" value="0" name="radioPregunta" #valor4 [checked] = 'radioValor2 == 0' (change)="setPregunta(valor4.value)">
             <label for="valor4">Ambas</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor5" type="radio" value="1" name="radioPregunta" #valor5 (change)="setPregunta(valor5.value)">
+            <input id="valor5" type="radio" value="1" name="radioPregunta" #valor5 [checked] = 'radioValor2 == 1' (change)="setPregunta(valor5.value)">
             <label for="valor5">Palabra1</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor6" type="radio" value="2" name="radioPregunta" #valor6 (change)="setPregunta(valor6.value)">
+            <input id="valor6" type="radio" value="2" name="radioPregunta" #valor6 [checked] = 'radioValor2 == 2' (change)="setPregunta(valor6.value)">
             <label for="valor6">Palabra2</label>
         </div>
 
         <div style="font-size: 2em; margin-top:1em;">  <legend>Tiempo límite por pregunta:</legend></div>
         <div class="class-radio">
-            <input id="valor11" type="radio" value="0" name="radioTiempo" #valor11 checked (change)="setTiempo(valor11.value)">
+            <input id="valor11" type="radio" value="0" name="radioTiempo" #valor11 [checked] = 'radioValor5 == 0' (change)="setTiempo(valor11.value)">
             <label for="valor11">∞</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor12" type="radio" value="10" name="radioTiempo" #valor12 (change)="setTiempo(valor12.value)">
+            <input id="valor12" type="radio" value="1" name="radioTiempo" #valor12 [checked] = 'radioValor5 == 1' (change)="setTiempo(valor12.value)">
             <label for="valor12">10s</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor13" type="radio" value="5" name="radioTiempo" #valor13 (change)="setTiempo(valor13.value)">
+            <input id="valor13" type="radio" value="2" name="radioTiempo" #valor13 [checked] = 'radioValor5 == 2' (change)="setTiempo(valor13.value)">
             <label for="valor13">5s</label>
         </div>
 
         <div style="font-size: 2em; margin-top:1em;">  <legend>Selecciona el tipo de respuesta:</legend></div>
         <div class="class-radio">
-            <input id="valor7" type="radio" value="0" name="radioRespuesta" #valor7 checked (change)="setRespuesta(valor7.value)">
+            <input id="valor7" type="radio" value="0" name="radioRespuesta" #valor7 [checked] = 'radioValor3 == 0' (change)="setRespuesta(valor7.value)">
             <label for="valor7">Opciones</label>
         </div>
 
         <div class="class-radio">
-            <input id="valor8" type="radio" value="1" name="radioRespuesta" #valor8 (change)="setRespuesta(valor8.value)">
+            <input id="valor8" type="radio" value="1" name="radioRespuesta" #valor8 [checked] = 'radioValor3 == 1' (change)="setRespuesta(valor8.value)">
             <label for="valor8">Escrita</label>
         </div>
         <div *ngIf="radioValor3 == 1">
             <div style="font-size: 2em; margin-top: 1em;">  <legend>¿Ignorar mayúsculas/minúsculas y tildes?</legend></div>
             <div class="class-radio">
-                <input id="valor9" type="radio" value="1" name="radioEstricto" #valor9 checked (change)="setIgnorar(valor9.value)">
+                <input id="valor9" type="radio" value="1" name="radioEstricto" #valor9 [checked] = 'radioValor4 == 1' (change)="setIgnorar(valor9.value)">
                 <label for="valor9">Sí</label>
             </div>
 
             <div class="class-radio">
-                <input id="valor10" type="radio" value="0" name="radioEstricto" #valor10 (change)="setIgnorar(valor10.value)">
+                <input id="valor10" type="radio" value="0" name="radioEstricto" #valor10 [checked] = 'radioValor4 == 0' (change)="setIgnorar(valor10.value)">
                 <label for="valor10">No</label>
             </div>
         </div>

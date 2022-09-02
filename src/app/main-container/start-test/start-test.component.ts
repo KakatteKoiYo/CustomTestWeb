@@ -31,7 +31,7 @@ export class StartTestComponent implements OnInit {
   
 
   lista! : IListaPalabras[];
-
+  opcionesManual : boolean = false;
   timeNotify : boolean = false;
   pistas : boolean = true;
   pruebaFinalizada = false;
@@ -259,24 +259,65 @@ export class StartTestComponent implements OnInit {
       .subscribe(params => {
         console.log(params); 
         if(params['cantidadPregunta'] != undefined){
-          this.cantidadPregunta = params['cantidadPregunta'];
+          if(params['cantidadPregunta'] == 0){
+            this.cantidadPregunta = 10;
+          }else if(params['cantidadPregunta'] == 1){
+            this.cantidadPregunta = 20;
+          }else if(params['cantidadPregunta'] == 2){
+            this.cantidadPregunta = 30;
+          }else{
+            this.cantidadPregunta = params['cantidadPregunta'];
+            this.opcionesManual = true;
+          }
+            
         }
+
         if(params['preguntaTipo'] != undefined){
-          this.preguntaTipo = params['preguntaTipo'];
+          if(params['preguntaTipo'] == 0 || params['preguntaTipo'] == 1 || params['preguntaTipo'] == 2){
+            this.preguntaTipo = params['preguntaTipo'];
+          }else{
+            this.preguntaTipo = 0;
+            this.opcionesManual = true;
+          }
+          
         }
         if(params['respuestaTipo'] != undefined){
-          this.respuestaTipo = params['respuestaTipo'];
+          if(params['respuestaTipo'] == 0 || params['respuestaTipo'] == 1 ){
+            this.respuestaTipo = params['respuestaTipo'];
+          }else{
+            this.respuestaTipo = 0;
+            this.opcionesManual = true;
+          }
+          
         }
         if(params['ignorar'] != undefined){
-          this.ignorar = params['ignorar'];
+          if(params['ignorar'] == 0 || params['ignorar'] == 1 ){
+            this.ignorar = params['ignorar'];
+          }else{
+            this.ignorar = 1;
+            this.opcionesManual = true;
+          }
         }
         if(params['tiempo'] != undefined){
-          this.tiempo = params['tiempo'];
+
+          if(params['tiempo'] == 1){
+            this.tiempo = 10;
+          }else if(params['tiempo'] == 2){
+            this.tiempo = 5;
+          }else{
+            this.tiempo = params['tiempo'];
+            this.opcionesManual = true;
+          }
+            
         }
     this.datos.closeSideNav();
+    if(!this.opcionesManual){
+      this.datos.updateFakeCookie([params['cantidadPregunta'], params['preguntaTipo'], params['respuestaTipo'], params['ignorar'], params['tiempo']])
+    }
 
       });
     this.lista = this.datos.listaPalabras!;
+    
     this.preguntaRespuestasGen();
   }
 
