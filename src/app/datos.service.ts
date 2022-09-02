@@ -27,8 +27,10 @@ export class DatosService {
 
   }
 
-  eliminarLista(){
-   
+  eliminarLista(listaNombre : string, valor1 : string, valor2 : string ){
+  //  for(let i of ListaEjemplo[listaNombre]){   no pude iterar en el objeto y encontrar los valores 
+  //   if(i.find(e => ))
+  //  }
   }
   
   crearLista(nombre : string, lista : IListaPalabras[]){
