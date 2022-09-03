@@ -27,7 +27,25 @@ export class DatosService {
 
   }
 
-  eliminarLista(listaNombre : string, valor1 : string, valor2 : string ){
+  eliminarLista(){
+    // for(let i in ListaEjemplo){
+    //   console.log(i)
+    // }
+    // for(let i of ListaEjemplo){
+    //   if(Object.keys(i)[0] == "Animales Inglés"){
+    //     for(let j of Object.values(i)[0]){
+    //       if(j.palabra1 == "Bull" && j.palabra2 == "Toro"){
+    //         delete j;
+    //       }
+          
+    //     }
+        
+        
+    //   }
+    //}
+    // console.log(Object.keys(ListaEjemplo))
+    // console.log(Object.values(ListaEjemplo))
+    // console.log(ListaEjemplo[2])
   //  for(let i of ListaEjemplo[listaNombre]){   no pude iterar en el objeto y encontrar los valores 
   //   if(i.find(e => ))
   //  }
