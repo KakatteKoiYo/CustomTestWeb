@@ -14,11 +14,13 @@
 <div class="class-detalles" *ngIf="palabra1Det && !noResult">
     
     <div class="pantalla-detalles">
-        {{palabra1Det}}
+        <div *ngIf="!editOn">{{palabra1Det}}</div>
+        <div *ngIf="editOn"><input  [(ngModel)]="palabra1Edit" class="class-input-edicion" type ="text"></div>
     </div>
 
     <div class="pantalla-detalles">
-        {{palabra2Det}}
+        <div *ngIf="!editOn">{{palabra2Det}}</div>
+        <div *ngIf="editOn"><input [(ngModel)]="palabra2Edit" class="class-input-edicion" type ="text"></div>
     </div>
         
     <div class="pantalla-detalles">
@@ -33,8 +35,12 @@
         </div>    
         
     </div>
-    <div class="class-editar-eliminar">
-        <button class="class-button-editeliminar"><mat-icon class="class-icon">edit</mat-icon>Editar</button>
-        <button class="class-button-editeliminar"><mat-icon class="class-icon" (click)="eliminar()">delete</mat-icon>Eliminar</button>
+    <div class="class-editar-eliminar" *ngIf="!editOn">
+        <button class="class-button-editeliminar" (click)="habilitarEdicion()"><mat-icon class="class-icon" >edit</mat-icon>Editar</button>
+        <button class="class-button-editeliminar" (click)="eliminar()"><mat-icon class="class-icon" >delete</mat-icon>Eliminar</button>
+    </div>
+    <div class="class-editar-eliminar" *ngIf="editOn">
+        <button class="class-button-editeliminar" (click)="editar(palabra1Edit!, palabra2Edit!, palabra1Det, palabra2Det!)"><mat-icon>done</mat-icon>Guardar</button>
+        <button class="class-button-editeliminar" (click)="editOn = false;"><mat-icon>cancel</mat-icon> Cancelar</button>
     </div>
 </div>

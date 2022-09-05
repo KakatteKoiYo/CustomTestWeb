@@ -23,8 +23,24 @@ export class DatosService {
   }
 
 
-  editarLista(){
-
+  editarLista(editPalabra1 : string, editPalabra2 : string, palabraAnterior1 : string, palabraAnterior2 : string, nombreLista : string){
+    console.log("NombreLista: " + nombreLista)
+    console.log("PalabraAnterior1: " + palabraAnterior1)
+    console.log("PalabraAnterior2: " + palabraAnterior2)
+    console.log("editPalabra1: " + editPalabra1)
+    console.log("editPalabra2: " + editPalabra2)
+    for(let i of ListaEjemplo){
+      if(Object.keys(i)[0] == nombreLista){
+        for(let j of Object.values(i)[0]){
+          if(j.palabra1 == palabraAnterior1 && j.palabra2 == palabraAnterior2){
+            j.palabra1 = editPalabra1
+            j.palabra2 = editPalabra2
+          }
+        }
+      }
+    }
+          
+        
   }
 
   eliminarLista(){
