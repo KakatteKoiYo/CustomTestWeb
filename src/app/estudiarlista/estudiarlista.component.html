@@ -36,7 +36,7 @@
         
     </div>
     <div class="class-editar-eliminar" *ngIf="!editOn">
-        <button class="class-button-editeliminar" (click)="editOn = true;"><mat-icon class="class-icon" >edit</mat-icon>Editar</button>
+        <button class="class-button-editeliminar" (click)="editOn = true; palabra1Edit = palabra1Det; palabra2Edit = palabra2Det"><mat-icon class="class-icon" >edit</mat-icon>Editar</button>
         <button class="class-button-editeliminar" (click)="eliminar()"><mat-icon class="class-icon" >delete</mat-icon>Eliminar</button>
     </div>
     <div class="class-editar-eliminar" *ngIf="editOn">

@@ -27,6 +27,8 @@ export class EstudiarlistaComponent implements OnInit {
   editar(editarPalabra1 : string, editarPalabra2 : string, anteriorPalabra1 : string, anteriorPalabra2 : string){
     this.datos.editarLista( editarPalabra1, editarPalabra2, anteriorPalabra1, anteriorPalabra2, this.nombreLista!)
     this.editOn = false;
+    this.palabra1Det = editarPalabra1;
+    this.palabra2Det = editarPalabra2;
   }
 
   onChange(valor : string){
