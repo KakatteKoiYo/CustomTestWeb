@@ -38,9 +38,10 @@
 }
 
 .class-search-input{
-    position: absolute;
-    right: 0;
     font-size: 1.3em;
+    margin-left: 1em;
+    margin-top: 1px;
+    border: 3px solid purple;
 
 }
 .class-noresult{
@@ -53,6 +54,10 @@
  overflow:auto;
  display: inline-block;
 
+}
+
+.class-opciones-detalles{
+    padding: 1em;
 }
 
 .class-detalles{

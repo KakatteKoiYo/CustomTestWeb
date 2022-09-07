@@ -44,19 +44,23 @@ export class DatosService {
   }
 
   eliminarLista(){
-    // for(let i in ListaEjemplo){
-    //   console.log(i)
-    // }
     // for(let i of ListaEjemplo){
+    //   console.log(Object.keys(i)[0])
+    // }
+    // let contador = 0;
+    // for(let i of ListaEjemplo){
+
     //   if(Object.keys(i)[0] == "Animales Inglés"){
-    //     for(let j of Object.values(i)[0]){
-    //       if(j.palabra1 == "Bull" && j.palabra2 == "Toro"){
-    //         delete j;
-    //       }
-          
+    //     delete ListaEjemplo[contador]
+    //     console.log("Eliminado")
+        
     //     }
+    //     contador ++;
+    //   }
         
-        
+    // for(let i of ListaEjemplo){
+    //   console.log(Object.keys(i)[0])
+    // }
     //   }
     //}
     // console.log(Object.keys(ListaEjemplo))
@@ -136,7 +140,7 @@ export interface IListaPalabras {
     nivel : number;
 }
 export interface IListaObjeto {
-  [key : string] : IListaPalabras[]
+  [key : string] : IListaPalabras[] 
   
 }
 

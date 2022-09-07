@@ -1,4 +1,8 @@
-<div style="padding-bottom:4em;"><input class= "class-search-input" id="searchFromList" #search [(ngModel)]="searchString" (keyup)="onChange(search.value)" placeholder="Buscar..."></div>
+<div class="class-opciones-detalles">
+    <input class= "class-search-input" id="searchFromList" #search [(ngModel)]="searchString" (keyup)="onChange(search.value)" placeholder="Buscar...">
+    <button>ELIMINAR LISTA</button>
+    <button>AGREGAR A LA LISTA</button>
+</div>
 <div *ngIf="noResult" class="class-noresult">No se encontraron coincidencias...</div>
 
 <div class="class-main">
