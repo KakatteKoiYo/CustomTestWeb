@@ -10,6 +10,7 @@ export class EstudiarlistaComponent implements OnInit {
 
   listaPalabras? : IListaPalabras[];
   listaPalabrasFiltro? : IListaPalabras[];
+  arrayPalabrasAg? : IListaPalabras[];
   nombreLista? : string;
   searchString?: string;
   noResult? : boolean;
@@ -59,6 +60,7 @@ export class EstudiarlistaComponent implements OnInit {
 
   mostrarDetalles(valor1 : string, valor2 : string){
     this.editOn = false;
+    this.addOn = false;
     this.palabra1Det = valor1;
     this.palabra2Det = valor2;
   }

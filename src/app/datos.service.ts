@@ -144,6 +144,7 @@ export interface IListaPalabras {
     descripcion : string;
     nivel : number;
 }
+
 export interface IListaObjeto {
   [key : string] : IListaPalabras[] 
   
