@@ -82,6 +82,16 @@
     color: white;
     text-align: center;
 }
+
+.class-input-agregar{
+    font-size: 1em;
+    width: 15em;
+    background: rgb(55, 63, 82);
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}
+
 .borderWidth{
     border-width: 1px;
 }

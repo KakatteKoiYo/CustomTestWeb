@@ -18,6 +18,7 @@ export class EstudiarlistaComponent implements OnInit {
   palabra1Edit? : string;
   palabra2Edit? : string;
   editOn: boolean = false;
+  addOn : boolean = false;
   constructor(private datos : DatosService) { }
 
   eliminar(){
@@ -31,6 +32,9 @@ export class EstudiarlistaComponent implements OnInit {
     this.palabra2Det = editarPalabra2;
   }
 
+  agregarALista(){
+    this.datos.agregarALista();
+  }
   onChange(valor : string){
     this.listaPalabrasFiltro = [];
     this.noResult = false;

@@ -24,11 +24,7 @@ export class DatosService {
 
 
   editarLista(editPalabra1 : string, editPalabra2 : string, palabraAnterior1 : string, palabraAnterior2 : string, nombreLista : string){
-    console.log("NombreLista: " + nombreLista)
-    console.log("PalabraAnterior1: " + palabraAnterior1)
-    console.log("PalabraAnterior2: " + palabraAnterior2)
-    console.log("editPalabra1: " + editPalabra1)
-    console.log("editPalabra2: " + editPalabra2)
+
     for(let i of ListaEjemplo){
       if(Object.keys(i)[0] == nombreLista){
         for(let j of Object.values(i)[0]){
@@ -95,6 +91,15 @@ export class DatosService {
         this.listaPalabras = Object.values(i)[0];
         console.log(this.listaPalabras)
         this.listaSeleccionada = valor;
+      }
+    }
+  }
+
+  agregarALista(){
+    for(let i of ListaEjemplo){
+      if(Object.keys(i)[0] == "Animales Inglés"){
+        console.log(Object.values(i)[0])
+        Object.values(i)[0].push({palabra1: 'Ant', palabra2: 'Hormiga', descripcion: '---', nivel : 0})
       }
     }
   }

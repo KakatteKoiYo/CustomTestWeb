@@ -1,7 +1,7 @@
 <div class="class-opciones-detalles">
     <input class= "class-search-input" id="searchFromList" #search [(ngModel)]="searchString" (keyup)="onChange(search.value)" placeholder="Buscar...">
-    <button>ELIMINAR LISTA</button>
-    <button>AGREGAR A LA LISTA</button>
+    <!-- <button disabled>ELIMINAR LISTA</button> -->
+    <button (click)="addOn = true;">AGREGAR A LA LISTA</button>
 </div>
 <div *ngIf="noResult" class="class-noresult">No se encontraron coincidencias...</div>
 
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="class-detalles" *ngIf="palabra1Det && !noResult">
+<div class="class-detalles" *ngIf="palabra1Det && !noResult && !addOn">
     
     <div class="pantalla-detalles">
         <div *ngIf="!editOn">{{palabra1Det}}</div>
@@ -47,4 +47,10 @@
         <button class="class-button-editeliminar" (click)="editar(palabra1Edit!, palabra2Edit!, palabra1Det, palabra2Det!)"><mat-icon>done</mat-icon>Guardar</button>
         <button class="class-button-editeliminar" (click)="editOn = false;"><mat-icon>cancel</mat-icon> Cancelar</button>
     </div>
+</div>
+
+<div class="class-detalles" *ngIf="addOn">
+    Agregar
+    <div><input class="class-input-agregar" type ="text"></div>
+    <div><input class="class-input-agregar" type ="text"></div>
 </div>
