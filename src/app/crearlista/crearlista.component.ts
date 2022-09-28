@@ -93,19 +93,6 @@ export class CrearlistaComponent implements OnInit {
       }})
   }
 
-  ngOnInit(){
-    
-    
-
-    
-  //   window.addEventListener("beforeunload", function (e) {
-      
-     
-  //     var confirmationMessage = "....";
-  //     // console.log(e);
-  //     e.returnValue = "Are you sure wanna leave";     // Gecko, Trident, Chrome 34+
-  //     //return "Bye"//confirmationMessage;              // Gecko, WebKit, Chrome <34
-  // });
-  }
+  ngOnInit(){}
 
 }

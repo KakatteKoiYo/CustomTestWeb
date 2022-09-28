@@ -1,14 +1,15 @@
-<div>
-    <h2 style="text-align: center; font-size: 3em;">¿Qué es CustomTestWebsite?</h2>
-    <span class="class-texto-home"><p>CustomTestWebsite sirve para realizar test personalizados.</p>
+<div class = "class-texto-home">
+    
 
-    <p>Creas tus propias listas, las cargas y la página automáticamente genera un test con preguntas y cinco opciones aleatorias. La respuesta es colocada en una posición aleatoria también.
-    El formato en el que se crean las listas es el siguiente: palabra1 = palabra2. </p>
 
-    <p> Tu decides si la pregunta será la palabra1 o palabra2. Si decides que la pregunta serán las palabra1, entonces las posibles respuestas serán las palabra2
-    Si aun no tienes ninguna lista puedes probar crear una: <a routerLink="../crearlista" class="class-link-crear">CREAR LISTA</a></p> 
-
-    <p>O si lo prefieres puedes probar utlizando la lista prehecha que contiene un Kanji japonés con su significado y estudiar dicha lista seleccionada acá: <a routerLink="../estudiarlista" class="class-link-crear">ESTUDIAR LISTA</a></p>
-
-    <p>Una vez que te sientas preparado prueba realizar un test: <a routerLink="../test" class="class-link-crear">TEST</a></p></span>
+    <p>CustomTestWebsite es una página que sirve para realizar test personalizados </p>
+    <span> El objetivo principal es poder memorizar la respuesta con un método que se basa en prueba-error. </span> 
+    <p> Supongamos que lees un libro que contiene palabras nuevas para ti, lo normal es que esas palabras las anotes en un cuaderno físico o virtual con su significado a un lado. Si son pocas palabras seguro las recuerdas fácilmente
+    Pero si son muchas te costará recordarlas... a menos que te las vuelvas a encontrar en ese u otro libro, 
+    porque entonces tratarás de recordar cuál era su significado, si tienes suerte lo recordarás, pero si no, darás una mirada al cuaderno y al ver el signicado como por arte de magia 
+    estará más firme en tu memoria y muy probablemente la próxima vez que lo veas lo recordarás.
+    Y es ahí donde fallar en recordar algo y luego recordarlo porque lo viste de nuevo es en lo que se basa el método de CustomTestWebsite</p>
+    <p>Esas palabras y su significado los agregas y creas una lista la cuál puedes estudiar para posteriormente realizar un test ya sea con opciones multiples o escribiendo la respuesta</p>
+    <p>Prueba <a [routerLink]="'/estudiarlista'" >estudiar</a> una de las listas pre-creadas (del lado izquierdo puedes seleccionar las listas) para realizar un <a [routerLink]="'/test'" >test</a>
+    o si lo prefieres <a [routerLink]="'/crearlista'" >crea</a> tu propia lista.</p>
 </div>

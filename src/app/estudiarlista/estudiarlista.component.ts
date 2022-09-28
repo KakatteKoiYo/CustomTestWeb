@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { DatosService, IListaPalabras } from '../datos.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { DatosService, IListaPalabras } from '../datos.service';
   styleUrls: ['./estudiarlista.component.css']
 })
 export class EstudiarlistaComponent implements OnInit {
+  @ViewChild('input1') input1? : ElementRef
+  @ViewChild('input2') input2? : ElementRef
 
   listaPalabras? : IListaPalabras[];
   listaPalabrasFiltro? : IListaPalabras[];
@@ -36,6 +38,9 @@ export class EstudiarlistaComponent implements OnInit {
   agregarALista(){
     this.datos.agregarALista();
   }
+
+  
+
   onChange(valor : string){
     this.listaPalabrasFiltro = [];
     this.noResult = false;

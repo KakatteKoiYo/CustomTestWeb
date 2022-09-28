@@ -1,7 +1,7 @@
 <div class="class-opciones-detalles">
     <input class= "class-search-input" id="searchFromList" #search [(ngModel)]="searchString" (keyup)="onChange(search.value)" placeholder="Buscar...">
     <!-- <button disabled>ELIMINAR LISTA</button> -->
-    <button (click)="addOn = true;">AGREGAR A LA LISTA</button>
+    <!-- <button (click)="addOn = true;">AGREGAR A LA LISTA</button> -->
 </div>
 <div *ngIf="noResult" class="class-noresult">No se encontraron coincidencias...</div>
 
@@ -49,10 +49,10 @@
     </div>
 </div>
 
-<div class="class-detalles" *ngIf="addOn">
+<!-- <div class="class-detalles" *ngIf="addOn">
     Agregar
-    <div><input class="class-input-agregar" type ="text"></div>
-    <div><input class="class-input-agregar" type ="text"></div>
+    <div><input #input1 id="input1" class="class-input-agregar" type ="text" (keyup.enter) = "input2.focus()"></div>
+    <div><input #input2 id="input2" class="class-input-agregar" type ="text"></div>
 
     <div *ngIf="arrayPalabrasAg">
         <table *ngIf="arrayPalabrasAg.length != 0 ">
@@ -70,7 +70,8 @@
               <td> <span class="class-eliminar">X</span>  </td>
             </tr>
           </table>
+        </div>
 
     </div>
     
-</div>
+</div> -->
