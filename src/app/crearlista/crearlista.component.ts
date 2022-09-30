@@ -25,8 +25,11 @@ export class CrearlistaComponent implements OnInit {
 
   cambiarFoco(){
     console.log(this.inputPalabra2?.nativeElement)
-    this.inputPalabra2?.nativeElement.focus();
-    this.bandera = 1
+    if(this.palabra1 != ""){
+      this.inputPalabra2?.nativeElement.focus();
+      this.bandera = 1
+    }
+    
   }
 
   validarTexto(){
@@ -58,23 +61,27 @@ export class CrearlistaComponent implements OnInit {
   }
 
   agregar(){
-    console.log(this.palabra1)
-    console.log(this.palabra2)
-    this.arrayPalabras.push({palabra1 : this.palabra1, palabra2 : this.palabra2, descripcion : "---", nivel : 0})  
-    console.log(this.arrayPalabras)
+    if(this.palabra2 != ""){
+      console.log(this.palabra1)
+      console.log(this.palabra2)
+      this.arrayPalabras.unshift({palabra1 : this.palabra1, palabra2 : this.palabra2, descripcion : "---", nivel : 0})  
+      console.log(this.arrayPalabras)
 
-    this.palabra1 = "";
-    this.palabra2 = "";
+      this.palabra1 = "";
+      this.palabra2 = "";
 
-    this.inputPalabra1?.nativeElement.focus();
-    this.isDisabled = true;
+      this.inputPalabra1?.nativeElement.focus();
+      this.isDisabled = true;
+
+    }
+    
 
   }
 
   eliminar(index: number){
     console.log(index)
-    this.arrayPalabras.reverse().splice(index, 1);
-    this.arrayPalabras.reverse()
+    this.arrayPalabras.splice(index, 1);
+    this.arrayPalabras
   }
 
   crear(nombre : string){
